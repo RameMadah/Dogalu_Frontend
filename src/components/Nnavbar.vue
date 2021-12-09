@@ -1,35 +1,54 @@
 <template>
+  <html>
+  <div>
   <ul class="nav">
-    <li class="logo">DOGALU</li>
-    <li ><router-link to="/"><A>Home</A></router-link> </li>
-    <li ><router-link to="/about"><a>About</a></router-link></li>
-    <li ><router-link to="/lesson"><a>Lessons</a></router-link></li>
+    <li class="logo" >DOGALU</li>
+    <li class ="list" ><router-link to="/"><a>Home</a></router-link> </li>
+    <li class ="list" ><router-link to="/about"><a>About</a></router-link></li>
+    <li class ="list" ><router-link to="/lesson"><a>Lessons</a></router-link></li>
   </ul>
+  </div>
+  </html>
+  <router-view></router-view>
+  <nfooter></nfooter>
 </template>
 
 <script>
-
 export default {
   name: 'Nnavbar'
 }
-
 </script>
 
 <style scoped>
-.A {text-decoration: none ;}
+.logo { ;
+  color: orangered;
+   }
+
+a {text-decoration: none ;
+  color: dimgray;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+text-decoration-thickness: 700% ;}
+
+#a a.router-link-exact-active {
+  color: orangered;
+}
+.a li:not(.logo):hover, .a li:not(.logo):focus {
+  color: orangered;}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box; }
 
-body {
-  background-color: #efeeee; }
+/*body {
+  background-color: #efeeee; }*/
 
 .nav {
   width: 100%;
   height: 100px;
   background-color: #ecf0f3;
-  box-shadow: 0px 0px 0px 0 rgba(0, 0, 0, 0.07);
+  box-shadow: 0px 10px 10px  rgba(0, 0, 0, 0.07);
   border-radius: 0 0 0px 0px;
   display: flex;
   justify-content: flex-end;

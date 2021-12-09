@@ -1,11 +1,16 @@
 <template>
-  <vuenav></vuenav>
-  <Nnavbar></Nnavbar>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
+  <nnavbar></nnavbar>
 </template>
+
+<script>
+
+import Nnavbar from '@/components/Nnavbar.vue'
+
+export default {
+  components: { Nnavbar }
+}
+
+</script>
 
 <style>
 #app {
@@ -29,12 +34,3 @@
   color: #42b983;
 }
 </style>
-
-<script>
-import Nnavbar from '@/components/Nnavbar'
-import Vuenav from '@/components/vuenav'
-
-export default {
-  components: { Vuenav, Nnavbar }
-}
-</script>

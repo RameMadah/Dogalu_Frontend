@@ -1,18 +1,15 @@
 <template>
-  <div class="lesson">
-    <h1>This is an about page</h1>
-  </div>
+  <lessoncon></lessoncon>
 </template>
 
 <script>
+import Lessoncon from '@/components/Lessoncon.vue'
 export default {
-  name: 'Lesson'
+  name: 'Lesson',
+  components: { Lessoncon }
 }
 </script>
 
 <style scoped>
-.lesson{
-  max-width: 500px;
-  margin: auto;
-}
+
 </style>
