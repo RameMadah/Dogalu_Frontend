@@ -191,7 +191,7 @@ body .footer .bubbles .bubble {
   left: var(--position, 50%);
   background: var(--footer-background);
   border-radius: 100%;
-  animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+  animation: bubble-size var(--time, 9s) ease-in infinite var(--delay, 2s), bubble-move var(--time, 11s) ease-in infinite var(--delay, 1s);
   transform: translate(-50%, 100%);
 }
 body .footer .content {

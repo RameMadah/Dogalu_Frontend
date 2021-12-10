@@ -1,7 +1,8 @@
 <template >
+  <img  class ='cover ' src="https://images.wagwalkingweb.com/media/daily_wag/sense_guides/hero/1533333929.64/Can-Dogs-Hear-Cell-Phones.jpg">
   <main>
     <section class="results-header">
-      <h1>Find dogs near you.</h1>
+      <h1 class ="TEXTO"> Wählen Sie Ihre Tippkarte </h1>
       <div class="results-header__option">
         <div class="option__button option--grid selected"><span></span><span></span><span></span><span></span><span>Grid</span></div>
         <div class="option__button option--list"><span></span><span></span><span></span><span>List</span></div>
@@ -46,7 +47,47 @@
     </div>
     <section class="results-section results--grid">
       <div class="profile">
-        <div class="profile__image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/dog.png" alt="Doggo" /></div>
+        <div class="profile__image"><img src="@/assets/Balu.png" alt="Doggo" /></div>
+        <div class="profile__info">
+          <h3 class="TEXTOH3">Doggo Dogg</h3>
+          <p class="profile__info__extra">A very good boi that loves playing fetch and ice-cream! Gentle with everyone. Scared of the rain.</p>
+        </div>
+        <div class="profile__stats">
+          <p class="profile__stats__title">Type</p>
+          <h5 class="profile__stats__info">Puppy</h5>
+        </div>
+        <div class="profile__stats">
+          <p class="profile__stats__title">Size</p>
+          <h5>Medium</h5>
+        </div>
+        <div class="profile__stats">
+          <p class="profile__stats__title">Weight</p>
+          <h5 class="profile__stats__info">45 lbs</h5>
+        </div>
+        <div class="profile__cta"><a class="button">Adopt Doggo!</a></div>
+      </div>
+      <div class="profile">
+        <div class="profile__image"><img src="@/assets/Catch.png" alt="Doggo" /></div>
+        <div class="profile__info">
+          <h3 class = 'TEXTOH3' >Doggo Dogg</h3>
+          <p class="profile__info__extra">A very good boi that loves playing fetch and ice-cream! Gentle with everyone. Scared of the rain.</p>
+        </div>
+        <div class="profile__stats">
+          <p class="profile__stats__title">Type</p>
+          <h5 class="profile__stats__info">Puppy</h5>
+        </div>
+        <div class="profile__stats">
+          <p class="profile__stats__title">Size</p>
+          <h5>Medium</h5>
+        </div>
+        <div class="profile__stats">
+          <p class="profile__stats__title">Weight</p>
+          <h5 class="profile__stats__info">45 lbs</h5>
+        </div>
+        <div class="profile__cta"><a class="button">Adopt Doggo!</a></div>
+      </div>
+      <div class="profile">
+        <div class="profile__image"><img src="https://pbs.twimg.com/media/E4pptxWUYAQcF8h.png" alt="Doggo" /></div>
         <div class="profile__info">
           <h3>Doggo Dogg</h3>
           <p class="profile__info__extra">A very good boi that loves playing fetch and ice-cream! Gentle with everyone. Scared of the rain.</p>
@@ -106,107 +147,7 @@
         <div class="profile__cta"><a class="button">Adopt Doggo!</a></div>
       </div>
       <div class="profile">
-        <div class="profile__image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/dog.png" alt="Doggo" /></div>
-        <div class="profile__info">
-          <h3>Doggo Dogg</h3>
-          <p class="profile__info__extra">A very good boi that loves playing fetch and ice-cream! Gentle with everyone. Scared of the rain.</p>
-        </div>
-        <div class="profile__stats">
-          <p class="profile__stats__title">Type</p>
-          <h5 class="profile__stats__info">Puppy</h5>
-        </div>
-        <div class="profile__stats">
-          <p class="profile__stats__title">Size</p>
-          <h5>Medium</h5>
-        </div>
-        <div class="profile__stats">
-          <p class="profile__stats__title">Weight</p>
-          <h5 class="profile__stats__info">45 lbs</h5>
-        </div>
-        <div class="profile__cta"><a class="button">Adopt Doggo!</a></div>
-      </div>
-      <div class="profile">
-        <div class="profile__image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/dog.png" alt="Doggo" /></div>
-        <div class="profile__info">
-          <h3>Doggo Dogg</h3>
-          <p class="profile__info__extra">A very good boi that loves playing fetch and ice-cream! Gentle with everyone. Scared of the rain.</p>
-        </div>
-        <div class="profile__stats">
-          <p class="profile__stats__title">Type</p>
-          <h5 class="profile__stats__info">Puppy</h5>
-        </div>
-        <div class="profile__stats">
-          <p class="profile__stats__title">Size</p>
-          <h5>Medium</h5>
-        </div>
-        <div class="profile__stats">
-          <p class="profile__stats__title">Weight</p>
-          <h5 class="profile__stats__info">45 lbs</h5>
-        </div>
-        <div class="profile__cta"><a class="button">Adopt Doggo!</a></div>
-      </div>
-      <div class="profile">
-        <div class="profile__image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/dog.png" alt="Doggo" /></div>
-        <div class="profile__info">
-          <h3>Doggo Dogg</h3>
-          <p class="profile__info__extra">A very good boi that loves playing fetch and ice-cream! Gentle with everyone. Scared of the rain.</p>
-        </div>
-        <div class="profile__stats">
-          <p class="profile__stats__title">Type</p>
-          <h5 class="profile__stats__info">Puppy</h5>
-        </div>
-        <div class="profile__stats">
-          <p class="profile__stats__title">Size</p>
-          <h5>Medium</h5>
-        </div>
-        <div class="profile__stats">
-          <p class="profile__stats__title">Weight</p>
-          <h5 class="profile__stats__info">45 lbs</h5>
-        </div>
-        <div class="profile__cta"><a class="button">Adopt Doggo!</a></div>
-      </div>
-      <div class="profile">
-        <div class="profile__image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/dog.png" alt="Doggo" /></div>
-        <div class="profile__info">
-          <h3>Doggo Dogg</h3>
-          <p class="profile__info__extra">A very good boi that loves playing fetch and ice-cream! Gentle with everyone. Scared of the rain.</p>
-        </div>
-        <div class="profile__stats">
-          <p class="profile__stats__title">Type</p>
-          <h5 class="profile__stats__info">Puppy</h5>
-        </div>
-        <div class="profile__stats">
-          <p class="profile__stats__title">Size</p>
-          <h5>Medium</h5>
-        </div>
-        <div class="profile__stats">
-          <p class="profile__stats__title">Weight</p>
-          <h5 class="profile__stats__info">45 lbs</h5>
-        </div>
-        <div class="profile__cta"><a class="button">Adopt Doggo!</a></div>
-      </div>
-      <div class="profile">
-        <div class="profile__image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/dog.png" alt="Doggo" /></div>
-        <div class="profile__info">
-          <h3>Doggo Dogg</h3>
-          <p class="profile__info__extra">A very good boi that loves playing fetch and ice-cream! Gentle with everyone. Scared of the rain.</p>
-        </div>
-        <div class="profile__stats">
-          <p class="profile__stats__title">Type</p>
-          <h5 class="profile__stats__info">Puppy</h5>
-        </div>
-        <div class="profile__stats">
-          <p class="profile__stats__title">Size</p>
-          <h5>Medium</h5>
-        </div>
-        <div class="profile__stats">
-          <p class="profile__stats__title">Weight</p>
-          <h5 class="profile__stats__info">45 lbs</h5>
-        </div>
-        <div class="profile__cta"><a class="button">Adopt Doggo!</a></div>
-      </div>
-      <div class="profile">
-        <div class="profile__image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/dog.png" alt="Doggo" /></div>
+        <div class="profile__image"><img src="https://petfriendsmagazine.files.wordpress.com/2018/08/dog.jpg" alt="Doggo" /></div>
         <div class="profile__info">
           <h3>Doggo Dogg</h3>
           <p class="profile__info__extra">A very good boi that loves playing fetch and ice-cream! Gentle with everyone. Scared of the rain.</p>
@@ -227,23 +168,59 @@
       </div>
     </section>
   </main>
-  <footer>
-    <div class="explanation">Part of the <a href="https://codepen.io/collection/DQvYpQ" target="_blank">CSS Grid collection here</a>. <a href="https://codepen.io/oliviale/full/mgWjpq" target="_blank">Part I</a> • <a href="https://codepen.io/oliviale/full/WqwOzv" target="_blank">Part II</a> • <a href="https://codepen.io/oliviale/full/GbmyYx" target="_blank">Part III</a></div>
-    <div class="social"><a href="https://twitter.com/meowlivia_" target="_blank"><i class="icon-social-twitter icons"></i></a><a href="https://github.com/oliviale" target="_blank"><i class="icon-social-github icons"></i></a><a href="https://dribbble.com/oliviale" target="_blank"><i class="icon-social-dribbble icons"></i></a></div>
-  </footer>
+  <img  class ='focover ' src="  https://embarkvet.com/wp-content/uploads/2018/09/embark-dognames-1.jpg">
+  <FooterBubbles></FooterBubbles>
 </template>
 
 <script>
+import FooterBubbles from '@/components/FooterBubbles'
 export default {
-  name: 'Lessoncon'
+  name: 'Lessoncon',
+  components: { FooterBubbles }
 }
 </script>
 
 <style scoped>
+.cover {/*
+  vertical-align: bottom;
+  background-position: -100px -100px;
+  display: revert;
+  display: grid;
+  width: 60%;
+  margin: 19px;
+  height: 430px;*/
+  vertical-align: middle;
+  background-position: -100px -100px;
+  display: flex;
+  width: 100%;
+  height: 530px;
+}
+.focover {
+  vertical-align: middle;
+  background-position: -100px -100px;
+  display: flex;
+  width: 100%;
+  height: 530px;
+}
 :root {
   --canvasColor: #f9f9f9;
 }
 
+.TEXTOH3{
+  margin-right: auto;
+  font-family: "Roboto", sans-serif;
+  font-size: 24px ;
+  color: dimgray;
+  font-weight: 600;
+}
+.TEXTO{
+margin-right: auto;
+font-family: "Roboto", sans-serif;
+  font-size: 50px ;
+color: dimgray;
+font-weight: 900;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), -2px -2px 4px white;
+}
 body {
   background: var(--canvasColor);
   font-family: "Poppins", sans-serif;
@@ -415,7 +392,7 @@ input:disabled ~ * {
   width: 4px;
   height: 16px;
   border-radius: 40px;
-  background: var(--backgroundColor);
+  background: var(--accent3Shade4);
   transition: all 0.3s ease;
 }
 
@@ -429,7 +406,7 @@ input:disabled ~ * {
 }
 
 .checkbox input:checked + label span.box {
-  background: var(--accent2Color);
+  background: var(--accent3Shade2);
   border-color: var(--accent2Color);
 }
 
@@ -478,9 +455,9 @@ button {
   font: 500 16px/1 "Poppins", sans-serif;
   padding: 20px;
   cursor: pointer;
-  border-radius: var(--borderRadius);
-  background: var(--accent3Shade1);
-  color: -- var(--accent3Shade2);
+  border-radius: var(--accent3Shade3);
+  background: var(--primaryColor);
+  color: -- var(--accent3Shade3);
   position: relative;
   top: 0;
   transition: 0.2s ease;
@@ -500,7 +477,7 @@ input.button:active,
 input.button.active,
 button:active,
 button.active {
-  background: var(--primaryShade4);
+  background: var(--secondaryShade2);
   outline: none;
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
   top: 0;
@@ -609,7 +586,7 @@ button.accent3.active {
   margin-bottom: 15px;
   display: block;
   padding: 10px 15px;
-  border-radius: var(--borderRadius);
+  border-radius: var(--accent3Shade4);
   font-weight: 500;
   position: relative;
   cursor: pointer;
@@ -662,7 +639,7 @@ button.accent3.active {
 
 .tooltip:after {
   content: attr(data-tooltip);
-  background: var(--neutralShade2);
+  background: var(--accent3Shade4);
   max-width: 90%;
   width: auto;
   position: absolute;
@@ -673,13 +650,13 @@ button.accent3.active {
   height: auto;
   font-size: 14px;
   padding: 10px;
-  border-radius: var(--borderRadius);
+  border-radius: var(--accent3Shade4);
   color: var(--foregroundColor);
   text-align: center;
 }
 
 .tooltip.dark:after {
-  background: var(--neutralShade7);
+  background: var(--accent3Shade4);
   color: var(--backgroundColor);
 }
 
@@ -842,6 +819,12 @@ input.variation + label {
   background: linear-gradient(to right, #367bc3 50%, #38bfa7 50%);
 }
 
+.profile__stats__title[data-v-41686c4a] {
+  color: #8e909d ;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
 #dark:checked ~ main {
   --canvasColor: #2a313b;
   --backgroundColor: #2a313b;
@@ -941,23 +924,23 @@ input.variation + label {
 #dark:checked ~ main .feedback-form,
 #pinkaru:checked ~ main h6.subheader,
 #pinkaru:checked ~ main .feedback-form {
-  color: var(--neutralShade1);
+  color: var( --primaryShade3 );
 }
 
 #dark:checked ~ main ::placeholder,
 #pinkaru:checked ~ main ::placeholder {
-  color: var(--neutralShade4);
+  color: var(--primaryShade3);
   opacity: 1;
 }
 
 #dark:checked ~ main :-ms-input-placeholder,
 #pinkaru:checked ~ main :-ms-input-placeholder {
-  color: var(--neutralShade4);
+  color: var(--primaryShade3);
 }
 
 #dark:checked ~ main ::-ms-input-placeholder,
 #pinkaru:checked ~ main ::-ms-input-placeholder {
-  color: var(--neutralShade4);
+  color: var(--primaryShade3);
 }
 
 #dark:checked ~ main .tooltip:after,
@@ -1023,13 +1006,13 @@ input.variation + label {
 
 #dark:checked ~ main a.link,
 #pinkaru:checked ~ main a.link {
-  color: var(--neutralShade2);
+  color: var(--primaryShade3);
 }
 
 #dark:checked ~ main a.link:hover, #dark:checked ~ main a.link.hover,
 #pinkaru:checked ~ main a.link:hover,
 #pinkaru:checked ~ main a.link.hover {
-  color: var(--neutralShade1);
+  color: var(--primaryShade3);
   border-bottom: 2px solid;
 }
 
@@ -1079,7 +1062,7 @@ input.variation + label {
   grid-gap: 5px;
   width: 55px;
   height: 75px;
-  border-radius: var(--borderRadius);
+  border-radius: var(--primaryShade3);
   padding: 10px;
   overflow: hidden;
   transition: 0.2s ease;
@@ -1162,7 +1145,7 @@ input.variation + label {
 }
 
 .profile__stats__title {
-  color: var(--grayColor);
+  color: var(--primaryShade3);
   text-transform: uppercase;
   font-size: 16px;
 }
@@ -1217,7 +1200,7 @@ input.variation + label {
 
 .filters__title {
   font-size: 18px;
-  color: var(--grayColor);
+  color: var(--primaryShade3);
   margin: 25px 0;
 }
 
@@ -1250,7 +1233,7 @@ input.variation + label {
 }
 
 .filters:not(:first-of-type) {
-  border-top: 0.5px solid var(--lightGrayColor);
+  border-top: 0.5px solid var(--primaryShade3);
   margin-top: 25px;
 }
 
@@ -1270,7 +1253,7 @@ input.variation + label {
 
   .filters:nth-child(3) {
     border-top: none;
-    border-left: 0.5px solid var(--lightGrayColor);
+    border-left: 0.5px solid var(--primaryShade3);
     margin-top: 0;
     padding-left: 25px;
   }
@@ -1334,7 +1317,7 @@ input.variation + label {
   .results-section.results--list .profile__stats {
     min-width: 100px;
     padding: 15px 0;
-    border-top: 0.5px solid var(--grayColor);
+    border-top: 0.5px solid var(--primaryShade3);
     grid-row: 2 / 3;
   }
 
@@ -1353,7 +1336,7 @@ input.variation + label {
   .results-section.results--list .profile__cta {
     grid-row: 2 / 3;
     grid-column: 5 / 6;
-    border-top: 0.5px solid var(--grayColor);
+    border-top: 0.5px solid var(--primaryShade3);
     padding: 15px 0 0;
   }
 }

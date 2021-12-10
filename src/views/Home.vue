@@ -1,16 +1,14 @@
 <template>
   <div class="home">
+  <coverholder></coverholder>
   </div>
-  <unit></unit>
 </template>
 
 <script>
-// @ is an alias to /src
-import Unit from '@/components/Unit'
+
+import Coverholder from '@/components/Coverholder'
 export default {
   name: 'Home',
-  components: {
-    Unit
-  }
+  components: { Coverholder }
 }
 </script>

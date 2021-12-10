@@ -1,19 +1,24 @@
 <template>
-        <div class="card-neumorphic p-8">
-          <img class="img-neumorphic block" src="https://images.unsplash.com/photo-1503079789711-148472409b63?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=400" alt="">
-          <div class="mt-6">
-            <div class="font-semibold text-gray-700">
-              The coldest mountain
-            </div>
-            <div class="text-xs text-gray-600 font-medium border-b border-gray-400 py-5">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-            </div>
-            <div class="mt-6">
-              <span class="tag-neumorphic inline-block p-2 rounded-full text-xs text-gray-600 mb-1 mr-4">#photography</span>
-              <span class="tag-neumorphic inline-block p-2 rounded-full text-xs text-gray-600">#travel</span>
-            </div>
-          </div>
-        </div>
+  <div class="profile">
+    <div class="profile__image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/dog.png" alt="Doggo" /></div>
+    <div class="profile__info">
+      <h3>Doggo Dogg</h3>
+      <p class="profile__info__extra">A very good boi that loves playing fetch and ice-cream! Gentle with everyone. Scared of the rain.</p>
+    </div>
+    <div class="profile__stats">
+      <p class="profile__stats__title">Type</p>
+      <h5 class="profile__stats__info">Puppy</h5>
+    </div>
+    <div class="profile__stats">
+      <p class="profile__stats__title">Size</p>
+      <h5>Medium</h5>
+    </div>
+    <div class="profile__stats">
+      <p class="profile__stats__title">Weight</p>
+      <h5 class="profile__stats__info">45 lbs</h5>
+    </div>
+    <div class="profile__cta"><a class="button">Adopt Doggo!</a></div>
+  </div>
 </template>
 <script>
 export default {
@@ -22,31 +27,53 @@ export default {
 </script>
 
 <style scoped>
-body {
-  background-color: #eaeef3;
-}
 
-.card-neumorphic {
-  border-radius: 20px;
-  background-color: #eaeef3;
-  box-shadow: 20px 20px 40px #c7cacf, -20px -20px 40px #ffffff;
-}
-
-.img-neumorphic {
+.profile {
+  position: relative;
+  background: var(--backgroundColor);
+  color: var(--foregroundColor);
+  box-shadow: 0 3px 15px rgba(51, 51, 51, 0.2);
   border-radius: 10px;
-  background-color: #eaeef3;
-  box-shadow: 10px 10px 20px #c7cacf, -10px -10px 20px #ffffff;
+  overflow: hidden;
+  transition: 0.2s ease;
+  display: grid;
+  grid: 200px repeat(5, auto)/100%;
 }
 
-.user-neumorphic {
-  border-radius: 9999px;
-  background-color: #eaeef3;
-  box-shadow: 10px 10px 20px #c7cacf, -10px -10px 20px #ffffff;
+.profile__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-bottom: 7px solid var(--secondaryColor);
 }
 
-.tag-neumorphic {
-  border-radius: 10px;
-  background-color: #eaeef3;
-  box-shadow: 5px 5px 20px #c7cacf, -5px -5px 20px #ffffff;
+.profile__info {
+  padding: 20px 25px 0;
+}
+
+.profile__stats {
+  padding: 5px 25px;
+}
+
+.profile__stats__title {
+  color: var(--primaryShade3);
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.profile__cta {
+  padding: 0 25px 25px;
+}
+
+.profile a:hover {
+  top: 0;
+  box-shadow: none;
+  background: var(--primaryShade4);
+}
+
+.profile a:active, .profile a:focus {
+  top: 0;
+  box-shadow: none;
+  background: var(--primaryShade5);
 }
 </style>

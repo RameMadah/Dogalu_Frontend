@@ -47,7 +47,7 @@ text-decoration-thickness: 700% ;}
 .nav {
   width: 100%;
   height: 100px;
-  background-color: #ecf0f3;
+  background-color: white;
   box-shadow: 0px 10px 10px  rgba(0, 0, 0, 0.07);
   border-radius: 0 0 0px 0px;
   display: flex;
