@@ -1,5 +1,5 @@
 <template >
-  <img  class ='cover ' src="https://images.wagwalkingweb.com/media/daily_wag/sense_guides/hero/1533333929.64/Can-Dogs-Hear-Cell-Phones.jpg">
+  <img  class ='cover ' src="@/assets/cover.png">
   <main>
     <section class="results-header">
       <h1 class ="TEXTO"> Wählen Sie Ihre Tippkarte </h1>
@@ -10,37 +10,31 @@
     </section>
     <div class="filter-section__wrapper">
       <section class="filter-section">
-        <h6>Filters</h6>
+        <h6></h6>
         <div class="filters">
-          <h5 class="filters__title">Dog Type</h5>
+          <h5 class="filters__title"> Unterrichtsart </h5>
           <div class="filters__item">
-            <div class="checkbox"><input id="checkbox-1" type="checkbox" /><label for="checkbox-1">Puppy<span class="box"></span>
+            <div class="checkbox"><input id="checkbox-1" type="checkbox" /><label for="checkbox-1"> grundlegende Lektionen <span class="box"></span>
               <div class="tooltip top" data-tooltip="Younger than 18 months."><span><i class="icon-info"></i></span></div>
-            </label></div><span class="badge status-primary">10</span>
+            </label></div><span class="badge status-primary">3</span>
           </div>
           <div class="filters__item">
-            <div class="checkbox"><input id="checkbox-2" type="checkbox" checked="checked" /><label for="checkbox-2">Young<span class="box"></span></label></div><span class="badge status-primary">5</span>
-          </div>
-          <div class="filters__item">
-            <div class="checkbox"><input id="checkbox-3" type="checkbox" /><label for="checkbox-3">Adult<span class="box"></span></label></div><span class="badge status-primary">20</span>
-          </div>
-          <div class="filters__item">
-            <div class="checkbox"><input id="checkbox-4" type="checkbox" /><label for="checkbox-4">Senior<span class="box"></span></label></div><span class="badge status-primary">8</span>
+            <div class="checkbox"><input id="checkbox-2" type="checkbox" checked="checked" /><label for="checkbox-2">Intellektuell<span class="box"></span></label></div><span class="badge status-primary">1</span>
           </div>
         </div>
         <div class="filters">
-          <h5 class="filters__title">Dog Size</h5>
+          <h5 class="filters__title"> Alle Lektionen </h5>
           <div class="filters__item">
-            <div class="checkbox"><input id="checkbox-5" type="checkbox" /><label for="checkbox-5">Small<span class="box"></span></label></div><span class="badge status-primary">9</span>
+            <div class="checkbox"><input id="checkbox-5" type="checkbox" /><label for="checkbox-5">Bring den Ball<span class="box"></span></label></div><span class="badge status-primary">9</span>
           </div>
           <div class="filters__item">
-            <div class="checkbox"><input id="checkbox-6" type="checkbox" checked="checked" /><label for="checkbox-6">Medium<span class="box"></span></label></div><span class="badge status-primary">12</span>
+            <div class="checkbox"><input id="checkbox-6" type="checkbox" checked="checked" /><label for="checkbox-6">Zusammen singen<span class="box"></span></label></div><span class="badge status-primary">1</span>
           </div>
           <div class="filters__item">
-            <div class="checkbox"><input id="checkbox-7" type="checkbox" /><label for="checkbox-7">Large<span class="box"></span></label></div><span class="badge status-primary">17</span>
+            <div class="checkbox"><input id="checkbox-7" type="checkbox" /><label for="checkbox-7">Fötchen<span class="box"></span></label></div><span class="badge status-primary">1</span>
           </div>
           <div class="filters__item">
-            <div class="checkbox"><input id="checkbox-8" type="checkbox" /><label for="checkbox-8">XL<span class="box"></span></label></div><span class="badge status-primary">3</span>
+            <div class="checkbox"><input id="checkbox-8" type="checkbox" /><label for="checkbox-8">Setzen<span class="box"></span></label></div><span class="badge status-primary">3</span>
           </div>
         </div>
       </section>
@@ -49,7 +43,7 @@
       <div class="profile">
         <div class="profile__image"><img src="@/assets/Balu.png" alt="Doggo" /></div>
         <div class="profile__info">
-          <h3 class="TEXTOH3">Doggo Dogg</h3>
+          <h3 class="TEXTOH3">Bring den Ball</h3>
           <p class="profile__info__extra">A very good boi that loves playing fetch and ice-cream! Gentle with everyone. Scared of the rain.</p>
         </div>
         <div class="profile__stats">
@@ -64,12 +58,12 @@
           <p class="profile__stats__title">Weight</p>
           <h5 class="profile__stats__info">45 lbs</h5>
         </div>
-        <div class="profile__cta"><a class="button">Adopt Doggo!</a></div>
+        <div class="profile__cta"><a class="button">Tip erhalten</a></div>
       </div>
       <div class="profile">
-        <div class="profile__image"><img src="@/assets/Catch.png" alt="Doggo" /></div>
+        <div class="profile__image"><img src="https://im0-tub-ru.yandex.net/i?id=709a2b73ca115acdd9613cc28f397ccc-l&ref=rim&n=13&w=1080&h=1350" alt="Doggo" /></div>
         <div class="profile__info">
-          <h3 class = 'TEXTOH3' >Doggo Dogg</h3>
+          <h3 class = 'TEXTOH3' >Fötchen!</h3>
           <p class="profile__info__extra">A very good boi that loves playing fetch and ice-cream! Gentle with everyone. Scared of the rain.</p>
         </div>
         <div class="profile__stats">
@@ -84,12 +78,12 @@
           <p class="profile__stats__title">Weight</p>
           <h5 class="profile__stats__info">45 lbs</h5>
         </div>
-        <div class="profile__cta"><a class="button">Adopt Doggo!</a></div>
+        <div class="profile__cta"><a class="button">Tip erhalten </a></div>
       </div>
       <div class="profile">
         <div class="profile__image"><img src="https://pbs.twimg.com/media/E4pptxWUYAQcF8h.png" alt="Doggo" /></div>
         <div class="profile__info">
-          <h3>Doggo Dogg</h3>
+          <h3 class="TEXTOH3" >Einfach setzen</h3>
           <p class="profile__info__extra">A very good boi that loves playing fetch and ice-cream! Gentle with everyone. Scared of the rain.</p>
         </div>
         <div class="profile__stats">
@@ -104,7 +98,27 @@
           <p class="profile__stats__title">Weight</p>
           <h5 class="profile__stats__info">45 lbs</h5>
         </div>
-        <div class="profile__cta"><a class="button">Adopt Doggo!</a></div>
+        <div class="profile__cta"><a class="button">Tip erhalten</a></div>
+      </div>
+      <div class="profile">
+        <div class="profile__image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/dog.png" alt="Doggo" /></div>
+        <div class="profile__info">
+          <h3 class="TEXTOH3">Hinlegen</h3>
+          <p class="profile__info__extra">A very good boi that loves playing fetch and ice-cream! Gentle with everyone. Scared of the rain.</p>
+        </div>
+        <div class="profile__stats">
+          <p class="profile__stats__title">Type</p>
+          <h5 class="profile__stats__info">Puppy</h5>
+        </div>
+        <div class="profile__stats">
+          <p class="profile__stats__title">Size</p>
+          <h5>Medium</h5>
+        </div>
+        <div class="profile__stats">
+          <p class="profile__stats__title">Weight</p>
+          <h5 class="profile__stats__info">45 lbs</h5>
+        </div>
+        <div class="profile__cta"><a class="button">Tip erhalten</a></div>
       </div>
       <div class="profile">
         <div class="profile__image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/dog.png" alt="Doggo" /></div>
@@ -124,27 +138,7 @@
           <p class="profile__stats__title">Weight</p>
           <h5 class="profile__stats__info">45 lbs</h5>
         </div>
-        <div class="profile__cta"><a class="button">Adopt Doggo!</a></div>
-      </div>
-      <div class="profile">
-        <div class="profile__image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/dog.png" alt="Doggo" /></div>
-        <div class="profile__info">
-          <h3>Doggo Dogg</h3>
-          <p class="profile__info__extra">A very good boi that loves playing fetch and ice-cream! Gentle with everyone. Scared of the rain.</p>
-        </div>
-        <div class="profile__stats">
-          <p class="profile__stats__title">Type</p>
-          <h5 class="profile__stats__info">Puppy</h5>
-        </div>
-        <div class="profile__stats">
-          <p class="profile__stats__title">Size</p>
-          <h5>Medium</h5>
-        </div>
-        <div class="profile__stats">
-          <p class="profile__stats__title">Weight</p>
-          <h5 class="profile__stats__info">45 lbs</h5>
-        </div>
-        <div class="profile__cta"><a class="button">Adopt Doggo!</a></div>
+        <div class="profile__cta"><a class="button">Tip erhalten</a></div>
       </div>
       <div class="profile">
         <div class="profile__image"><img src="https://petfriendsmagazine.files.wordpress.com/2018/08/dog.jpg" alt="Doggo" /></div>
@@ -164,7 +158,7 @@
           <p class="profile__stats__title">Weight</p>
           <h5 class="profile__stats__info">45 lbs</h5>
         </div>
-        <div class="profile__cta"><a class="button">Adopt Doggo!</a></div>
+        <div class="profile__cta"><a class="button">Tip erhalten</a></div>
       </div>
     </section>
   </main>
@@ -181,6 +175,7 @@ export default {
 </script>
 
 <style scoped>
+
 .cover {/*
   vertical-align: bottom;
   background-position: -100px -100px;
@@ -210,14 +205,15 @@ export default {
   margin-right: auto;
   font-family: "Roboto", sans-serif;
   font-size: 24px ;
-  color: dimgray;
+  color: black;
   font-weight: 600;
 }
 .TEXTO{
 margin-right: auto;
 font-family: "Roboto", sans-serif;
-  font-size: 50px ;
-color: dimgray;
+  font-size: 24px ;
+align-content: center;
+color: black;
 font-weight: 900;
 text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), -2px -2px 4px white;
 }
@@ -429,10 +425,12 @@ input:disabled ~ * {
 }
 
 /*buttons & links*/
-.buttons {
+.button {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  color: var(--accent3Shade3);
+  border-radius: 10px;
 }
 
 .buttons > * {
@@ -443,19 +441,22 @@ input:disabled ~ * {
 .buttons > *:nth-child(odd) {
   margin-right: 20px;
 }
-
+/*here is the buttons options */
 a.button,
 input.button,
 button {
+  font-weight: 500;
+  border-radius: 10px;
   outline: none;
   width: 100%;
   text-align: center;
   display: inline-block;
   border: none;
-  font: 500 16px/1 "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  text-decoration: none;
   padding: 20px;
   cursor: pointer;
-  border-radius: var(--accent3Shade3);
   background: var(--primaryColor);
   color: -- var(--accent3Shade3);
   position: relative;
@@ -469,6 +470,7 @@ input.button.hover,
 button:hover,
 button.hover {
   top: -3px;
+  border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
@@ -481,6 +483,7 @@ button.active {
   outline: none;
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
   top: 0;
+  border-radius: 10px;
 }
 
 a.button.disabled,
@@ -489,6 +492,7 @@ button.disabled {
   opacity: 0.4;
   user-select: none;
   pointer-events: none;
+  border-radius: 10px;
 }
 
 a.button.medium,
@@ -496,12 +500,14 @@ input.button.medium,
 button.medium {
   padding: 15px 18px;
   width: auto;
+  border-radius: 10px;
 }
 
 a.button.small,
 input.button.small,
 button.small {
   padding: 10px 12px;
+  border-radius: 10px;
   width: auto;
   font-size: 14px;
   font-weight: 500;
@@ -945,7 +951,7 @@ input.variation + label {
 
 #dark:checked ~ main .tooltip:after,
 #pinkaru:checked ~ main .tooltip:after {
-  color: var(--backgroundColor);
+  color: var(--accent3Shade5);
 }
 
 #dark:checked ~ main a.button,
@@ -956,7 +962,7 @@ input.variation + label {
 #pinkaru:checked ~ main input.button,
 #pinkaru:checked ~ main button,
 #pinkaru:checked ~ main .tooltip.dark:after {
-  color: var(--foregroundColor);
+  color: var(--accent3Shade3);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
@@ -964,7 +970,7 @@ input.variation + label {
 #dark:checked ~ main .button.active,
 #pinkaru:checked ~ main .button:active,
 #pinkaru:checked ~ main .button.active {
-  background: var(--primaryShade1);
+  background: var(--primaryColor);
 }
 
 #dark:checked ~ main .button.secondary:active,
@@ -1152,6 +1158,7 @@ input.variation + label {
 
 .profile__cta {
   padding: 0 25px 25px;
+  border-radius: 10px;
 }
 
 .profile a:hover {
