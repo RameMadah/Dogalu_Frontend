@@ -1,8 +1,10 @@
 <template >
-  <img  class ='cover ' src="@/assets/cover.png">
+  <img  class ='cover ' src="@/assets/Unbenannt.png">
   <main>
     <section class="results-header">
-      <h1 class ="TEXTO"> Wählen Sie Ihre Tippkarte </h1>
+      <h1 class ="TEXTO"> Möchtest du dein Haustier etwas beibringen? Und das ist mit Spaß ? Dann wir empfehlen dir unsere kleinen Tipps anzuschauen, damit dein Haustier durch Zwinkern versteht.
+
+      </h1>
       <div class="results-header__option">
         <div class="option__button option--grid selected"><span></span><span></span><span></span><span></span><span>Grid</span></div>
         <div class="option__button option--list"><span></span><span></span><span></span><span>List</span></div>
@@ -214,8 +216,8 @@ font-family: "Roboto", sans-serif;
   font-size: 24px ;
 align-content: center;
 color: black;
-font-weight: 900;
-text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), -2px -2px 4px white;
+font-weight: 400;
+/*text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), -2px -2px 4px white;*/
 }
 body {
   background: var(--canvasColor);
