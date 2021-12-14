@@ -1,5 +1,7 @@
 <template>
+  <section>
   <div class="row row-cols-1 row-cols-md-3 g-4">
+    <sidenav></sidenav>
     <div class="col"  v-for= " lesson in lessons" v-bind:key= "lesson.lid" >
       <div class="card h-100">
         <img :src="getAvatar(lesson)" class="card-img-top" alt="lesson.title">
@@ -14,35 +16,17 @@
       </div>
     </div>
   </div>
+  </section>
 </template>
 
 <script>
+import Sidenav from '@/components/Sidenav'
 export default {
   name: 'Gridcard',
+  components: { Sidenav },
   data () {
     return {
-      lessons: [
-        {
-          lid: 1,
-          title: 'Fpötschen',
-          description: 'Halten Sie Ihre Faust mit der Handfläche nach oben etwa auf' +
-              ' Brusthöhe Ihres Hundes. Ihr Hund sollte ganz natürlich nach Ihrer Faust greifen,' +
-              ' um an das Leckerli zu gelangen. Wenn er das tut, öffnen Sie Ihre Hand und geben Sie ihm ' +
-              'das Leckerli und loben Sie ihn ausgiebig. Wiederholen Sie diese Schritte mehrmals, bis Ihr Hund' +
-              ' es verstanden hat.',
-          punkte: 25
-        },
-        {
-          lid: 2,
-          title: 'Fpötschen',
-          description: 'Halten Sie Ihre Faust mit der Handfläche nach oben etwa auf' +
-              ' Brusthöhe Ihres Hundes. Ihr Hund sollte ganz natürlich nach Ihrer Faust greifen,' +
-              ' um an das Leckerli zu gelangen. Wenn er das tut, öffnen Sie Ihre Hand und geben Sie ihm ' +
-              'das Leckerli und loben Sie ihn ausgiebig. Wiederholen Sie diese Schritte mehrmals, bis Ihr Hund' +
-              ' es verstanden hat.',
-          punkte: 25
-        }
-      ]
+      lessons: []
     }
   },
   methods: {
@@ -51,6 +35,19 @@ export default {
         return require('../assets/Balu.png')
       }
     }
+  },
+  mounted () {
+    const requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+    }
+
+    fetch('http://localhost:8010/api/v1/lessons', requestOptions)
+      .then(response => response.json())
+      .then(result => result.forEach(lesson => {
+        this.lessons.push(lesson)
+      }))
+      .catch(error => console.log('error', error))
   }
 }
 

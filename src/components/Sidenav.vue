@@ -1,39 +1,19 @@
 <template>
-  <div class="list-group" v-for="lesson in lessons" :key="lesson.lid">
-    <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-      {{lesson.title}}
-    </a>
+  <div class="container">
+    <div class="row justify-content-start" v-for="lesson in lessons" :key="lesson.lid">
+      <div class="col-4">
+        {{ lesson.title }}
+      </div>
+    </div>
   </div>
 </template>
-
 <script>
 export default {
   name: 'Sidenav',
 
   data () {
     return {
-      lessons: [
-        {
-          lid: 1,
-          title: 'Fpötschen',
-          description: 'Halten Sie Ihre Faust mit der Handfläche nach oben etwa auf' +
-            ' Brusthöhe Ihres Hundes. Ihr Hund sollte ganz natürlich nach Ihrer Faust greifen,' +
-            ' um an das Leckerli zu gelangen. Wenn er das tut, öffnen Sie Ihre Hand und geben Sie ihm ' +
-            'das Leckerli und loben Sie ihn ausgiebig. Wiederholen Sie diese Schritte mehrmals, bis Ihr Hund' +
-            ' es verstanden hat.',
-          punkte: 25
-        },
-        {
-          lid: 2,
-          title: 'Fpötschen',
-          description: 'Halten Sie Ihre Faust mit der Handfläche nach oben etwa auf' +
-            ' Brusthöhe Ihres Hundes. Ihr Hund sollte ganz natürlich nach Ihrer Faust greifen,' +
-            ' um an das Leckerli zu gelangen. Wenn er das tut, öffnen Sie Ihre Hand und geben Sie ihm ' +
-            'das Leckerli und loben Sie ihn ausgiebig. Wiederholen Sie diese Schritte mehrmals, bis Ihr Hund' +
-            ' es verstanden hat.',
-          punkte: 25
-        }
-      ]
+      lessons: []
     }
   },
   methods: {
@@ -42,10 +22,25 @@ export default {
         return require('../assets/Balu.png')
       }
     }
+  },
+  mounted () {
+    const requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+    }
+
+    fetch('http://localhost:8010/api/v1/lessons', requestOptions)
+      .then(response => response.json())
+      .then(result => result.forEach(lesson => {
+        this.lessons.push(lesson)
+      }))
+      .catch(error => console.log('error', error))
   }
 }
 </script>
 
 <style scoped>
-
+.container{
+  width: 20%;
+}
 </style>
