@@ -1,12 +1,14 @@
 <template>
-  <lessoncon></lessoncon>
+  <gridcard></gridcard>
+  <sidenav></sidenav>
 </template>
 
 <script>
-import Lessoncon from '@/components/Lessoncon.vue'
+import Gridcard from '@/components/Gridcard'
+import Sidenav from '@/components/Sidenav'
 export default {
   name: 'Lesson',
-  components: { Lessoncon }
+  components: { Sidenav, Gridcard }
 }
 </script>
 

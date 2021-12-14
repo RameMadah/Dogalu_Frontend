@@ -1,15 +1,13 @@
 <template>
   <nnavbar></nnavbar>
-  <front></front>
 </template>
 
 <script>
 
 import Nnavbar from '@/components/Nnavbar.vue'
-import Front from '@/components/Front'
 
 export default {
-  components: { Front, Nnavbar }
+  components: { Nnavbar }
 }
 
 </script>
