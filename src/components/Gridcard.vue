@@ -37,12 +37,13 @@ export default {
     }
   },
   mounted () {
+    const base = process.env.VUE_APP_BACKEND_BASE_URL + '/api/v1/lessons'
     const requestOptions = {
       method: 'GET',
       redirect: 'follow'
     }
 
-    fetch('http://localhost:8010/api/v1/lessons', requestOptions)
+    fetch(base, requestOptions)
       .then(response => response.json())
       .then(result => result.forEach(lesson => {
         this.lessons.push(lesson)
