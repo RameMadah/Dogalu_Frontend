@@ -74,8 +74,9 @@ body {
   width: 37.5vmax;
   height: 37.5vmax;
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
+  margin-left: 900px;
 }
 .leg {
   position: absolute;
