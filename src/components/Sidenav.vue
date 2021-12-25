@@ -1,5 +1,12 @@
 <template>
   <div class="container">
+    <div class="row justify-content-start">
+      <div class="col-4">
+        <strong class="top">Lektionen</strong>
+      </div>
+    </div>
+  </div>
+  <div class="container">
     <div class="row justify-content-start" v-for="lesson in lessons" :key="lesson.lid">
       <div class="col-4">
         {{ lesson.title }}
@@ -7,6 +14,7 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
   name: 'Sidenav',
@@ -52,7 +60,7 @@ export default {
   color: dimgray;
 }
 .container{
-  width: 50%;
+  width: 100%;
   margin: 0 1rem;
   padding: 0.5rem 1.5rem;
   border: 2px solid rgba(255, 255, 255, 0.3);
@@ -62,5 +70,9 @@ export default {
   cursor: pointer;
   transition: color 0.2s ease-out, transform 0.2s ease-out;
   color: dimgray;
+}
+
+.top {
+  background-color: whitesmoke;
 }
 </style>

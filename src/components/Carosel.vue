@@ -1,5 +1,5 @@
 <template>
-  <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
+  <div id="carouselExampleControlsNoTouching" class="carouselslide" data-bs-touch="false" data-bs-interval="false">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="https://images.squarespace-cdn.com/content/v1/5e88a5d026b2a81425a06cdd/1586102468872-NQZSP8F93PTA2DLLUXLC/Pet%2BLineup.jpg" class="d-block w-100" alt="...">
@@ -29,5 +29,7 @@ export default {
 </script>
 
 <style scoped>
-
+.carouselslide {
+  padding: 20px 0px 0px 0px;
+}
 </style>

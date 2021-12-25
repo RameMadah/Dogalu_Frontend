@@ -4,13 +4,11 @@
   <ul class="nav">
     <li class="logo" >DOGALU</li>
     <li class ="list" ><router-link to="/"><a>Home</a></router-link> </li>
-    <li class ="list" ><router-link to="/about"><a>About</a></router-link></li>
+    <li class ="list" ><router-link to="/blog"><a>Blog</a></router-link></li>
     <li class ="list" ><router-link to="/lesson"><a>Lessons</a></router-link></li>
   </ul>
   </div>
   </html>
-  <router-view></router-view>
-  <nfooter></nfooter>
 </template>
 
 <script>

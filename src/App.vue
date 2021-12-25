@@ -1,13 +1,16 @@
 <template>
   <nnavbar></nnavbar>
+  <router-view></router-view>
+  <Footer></Footer>
 </template>
 
 <script>
 
 import Nnavbar from '@/components/Nnavbar.vue'
+import Footer from '@/components/Footer'
 
 export default {
-  components: { Nnavbar }
+  components: { Footer, Nnavbar }
 }
 
 </script>
