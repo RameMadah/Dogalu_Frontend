@@ -4,11 +4,11 @@
       <div class="row">
         <div class="col-sm-3">
           <div class="footer-widget">
-            <h3>Stay in touch</h3>
+            <h3>Kontakt aufnehmen</h3>
             <div class="footer-widget-content">
-              <a href="mailto:sales@example.com" class="contact-link">sales@example.com</a>
-              <a href="mailto:support@example.com" class="contact-link red"> support@example.com </a>
-              <a href="tel:0121234" class="contact-link">(123) 456-789</a>
+              <a href="mailto:Rame.Madah@Student.HTW-Berlin.de" class="contact-link">Rame.Madah@Student.HTW-Berlin.de</a>
+              <a href="mailto:lawkira10@gmail.com" class="contact-link red"> lawkira10@gmail.com </a>
+              <a href="tel:015755290972" class="contact-link">(49) 15755290972</a>
               <div class="footer-social">
                 <ul>
                   <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -23,15 +23,15 @@
         </div>
         <div class="col-sm-3">
           <div class="footer-widget">
-            <h3>Latest Events</h3>
+            <h3>letzte Beiträge</h3>
             <div class="footer-widget-content">
               <div class="media">
                 <div class="media-left">
                   <a href="#"><img class="media-object" src="http://placehold.it/60x60" alt="..."></a>
                 </div>
                 <div class="media-body">
-                  <p><a href="#">vulputate velit esse consequat. </a></p>
-                  <span>September 30, 2016 </span>
+                  <p><a href="#"> Dogalu App. </a></p>
+                  <span>Nov 12, 2021 </span>
                 </div>
               </div>
               <div class="media">
@@ -39,8 +39,8 @@
                   <a href="#."><img class="media-object" src="http://placehold.it/60x60" alt="..."></a>
                 </div>
                 <div class="media-body">
-                  <p><a href="#">vulputate velit esse consequat. </a></p>
-                  <span>September 30, 2016 </span>
+                  <p><a href="#">Haustier. </a></p>
+                  <span>Nov 12, 2021</span>
                 </div>
               </div>
             </div>
@@ -96,12 +96,16 @@ export default {
 }
 footer {
   width: 100%;
+  color: dimgray;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  text-decoration-thickness: 900% ;
   border: 2px solid rgba(255, 255, 255, 0.3);
   box-shadow: 4px 4px 6px 0 rgba(0, 0, 0, 0.1), -4px -4px 6px white;
-  font-family: "Roboto", sans-serif;
+  /*font-family: "Roboto", sans-serif;*/
   cursor: pointer;
   transition: color 0.2s ease-out, transform 0.2s ease-out;
-  color: dimgray;
+ /* color: dimgray;*/
   background-color: #f5f5f5;
   padding: 80px 0;
 }
@@ -140,6 +144,10 @@ footer .opening-time li {
 footer .opening-time li span {
   float: left;
   padding-right: 10px;
+  color: dimgray;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  text-decoration-thickness: 900% ;
 }
 footer .opening-time li span .fa-times {
   color: darkgreen;
