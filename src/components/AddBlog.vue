@@ -3,7 +3,7 @@
 
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
-      <h5 id="offcanvasRightLabel"><p class="bolgtitle">Blogalu ...</p></h5>
+      <h5 id="offcanvasRightLabel"><p class="bolgtitle">Blogalu ..</p></h5>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
@@ -55,9 +55,27 @@ export default {
 </script>
 
 <style scoped>
+.btn-primary:hover{
+  background-color: #e0e5ec;
+  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
+  transition-duration: 0.4s;
+  border-color: rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+}
+
+.bolgtitle{
+  color: dimgray;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  text-decoration-thickness: 900% ;
+  position: absolute;
+  left: 590px;
+  bottom: 480px;
+  font-size: 98px;
+}
   .low {
   position: absolute;
-  bottom: 549px;
+  bottom: 411px;
   left: -53px;
     size: 30px;
   width: 27.5vmax;
@@ -287,14 +305,4 @@ label {
   float: left;
 }
 
-.bolgtitle{
-  color: dimgray;
-  font-weight: 600;
-  font-family: "Roboto", sans-serif;
-  text-decoration-thickness: 900% ;
-  position: absolute;
-  left: 590px;
-  bottom: 590px;
-  font-size: 98px;
-}
 </style>

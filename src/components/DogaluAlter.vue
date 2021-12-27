@@ -3,9 +3,10 @@
         <div class="content center">
           <h2 class="tex">Wie alt ist Ihr Hund in menschlichen Jahren?</h2>
           <div class="input-container">
-            <input type="text" class="form-control" id="author" placeholder=" " v-model ="author">
+            <input type="number" class="form-control" id="year" placeholder=" " v-model = "this.year">
             <br>
             <button class="btn btn-primary me-3" type="submit" @click="calc()">Berechnen</button>
+            <button class="btn btn-primary me-3" type="submit" @click="clear()">Reset</button>
             <br>
           </div>
           <div class="calc-results">
@@ -14,21 +15,21 @@
               <div class="imgg">
                 <img   src="@/assets/se.png" alt="Kleine Hunde">
               </div>
-              <output class="num-totals tex" data-default="total-small-dog">{{ years.small }}</output>
+              <output class="num-totals tex" data-default="total-small-dog">{{ this.small }}</output>
               <h3 class="tex">kleine</h3>
             </div>
             <div class="num-result center">
               <div class="imgg">
                 <img   src="@/assets/me.png" alt="Normale Hunde">
               </div>
-              <output class="num-totals tex" data-default=" " >{{ years.medium }}</output>
+              <output class="num-totals tex" data-default=" " >{{ this.medium }}</output>
               <h3 class="tex">Normal </h3>
             </div>
             <div class="num-result center">
               <div class="imgg">
                 <img   src="@/assets/bb.png" alt="Größe Hunde">
               </div>
-              <output class="num-totals tex" data-default="49">{{ years.big }}</output>
+              <output class="num-totals tex" data-default="49">{{ this.big }}</output>
               <h3 class="tex1">Gorß </h3>
             </div>
           </div>
@@ -44,19 +45,24 @@ export default {
   name: 'DogaluAlter',
   data () {
     return {
-      years: {
-        small: '0',
-        medium: '0',
-        big: '0'
-      },
-      year: '0'
+
+      small: ' ',
+      medium: ' ',
+      big: ' ',
+
+      year: ' '
     }
   },
   methods: {
     calc () {
-      this.years.small = (this.year * 4) + 20
-      this.years.big = (this.year * 9) + 4
-      this.years.medium = (this.year * 6) + 15
+      this.small = (this.year * 4) + 20
+      this.big = this.year * 9 + 4
+      this.medium = this.year * 6 + 15
+    },
+    clear () {
+      this.small = ''
+      this.big = ''
+      this.medium = ' '
     }
   }
 }
@@ -120,7 +126,12 @@ img{
   text-decoration-thickness: 700%;
   /*  color: #fff;*/
   background-color: #e4ecf4;
-  border-color: rgba(163, 177, 198, 0.6);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.btn-primary:hover{
+  background-color: #e0e5ec;
+  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
+
 }
 
 label {

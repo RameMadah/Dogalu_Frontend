@@ -38,7 +38,7 @@
 
 <script>
 export default {
-  name: 'Activedog'
+  name: 'Activedogb'
 }
 </script>
 
@@ -60,7 +60,7 @@ export default {
   width: 100%;
   border-radius: 50%;
   box-shadow: inset 0 -8px 0 0 rgba(0, 0, 0, 0.2);
-  background: #6e64f0;
+  background:#8bc34a;
   z-index: 1;
 }
 .ball:focus {
@@ -198,11 +198,11 @@ export default {
   width: 40px;
   border-radius: 40px;
   position: absolute;
-  background: orange;
+  background: #3E1C00;
   top: -10px;
   left: -10px;
   z-index: 0;
-  border: 4px solid white;
+  border: 4px solid saddlebrown;
   border-left-width: 0;
   border-bottom-width: 0;
   border-top-width: 0;
@@ -212,7 +212,7 @@ export default {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #000;
+  background: black;
   z-index: 1;
   animation: dog-eye 1800ms infinite;
 }
@@ -238,7 +238,7 @@ export default {
   height: 50%;
   border-bottom-left-radius: 100%;
   border-bottom-right-radius: 100%;
-  background: white;
+  background: saddlebrown;
   bottom: -15%;
 }
 .dog-muzzle:before, .dog-muzzle:after {
@@ -251,10 +251,10 @@ export default {
   height: 20px;
   bottom: 0;
   left: calc(50% - 3px);
-  background: #eaebec;
+  background: saddlebrown;
 }
 .dog-muzzle:after {
-  background: black;
+  background: #3E1C00;
   width: 20px;
   height: 15px;
   bottom: 12px;
@@ -331,7 +331,7 @@ export default {
   bottom: -10px;
   height: 50px;
   width: 50px;
-  background: #eaebec;
+  background: #3E1C00;
   animation-duration: 400ms;
   animation-direction: alternate;
   animation-timing-function: ease-in-out;
@@ -342,7 +342,7 @@ export default {
   border-bottom-left-radius: 80%;
   border-top-right-radius: 80%;
   right: 100%;
-  box-shadow: inset -15px 15px 0 1px white;
+  box-shadow: inset -15px 15px 0 1px saddlebrown;
   transform-origin: right bottom;
   transform: rotate(10deg);
 }
@@ -350,14 +350,14 @@ export default {
   border-top-left-radius: 80%;
   border-bottom-right-radius: 80%;
   left: 100%;
-  box-shadow: inset 15px 15px 0 0 white;
+  box-shadow: inset 15px 15px 0 0 saddlebrown;
   transform-origin: left bottom;
   transform: rotate(-10deg);
 }
 .dog-tail {
   width: 22px;
   height: 24.2px;
-  background: white;
+  background: saddlebrown;
   bottom: 40%;
   border-radius: 11px;
   left: calc(50% - 11px);
@@ -388,7 +388,7 @@ export default {
 }
 .dog-body, .dog-torso, .dog-head {
   border-radius: 50%;
-  background: white;
+  background: saddlebrown;
   position: absolute;
   height: 100%;
   width: 100%;

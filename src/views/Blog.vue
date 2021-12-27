@@ -1,45 +1,61 @@
 <template>
   <div class = "section">
-  <div class ="dog">
-  <activedog></activedog>
-  </div>
-  <space></space>
-  <div class="blog">
-    <p>Willkomen in Blogalu</p>
-    <p class="p">Hier kannst Einen <br> Blog Erstellen & die Beiträge lesen</p>
-  </div>
+    <div class ="dog">
+      <space></space>
+      <activedog></activedog>
+    </div>
+    <div class="blog">
+      <p>Willkomen in Blogalu</p>
+      <p class="p">Hier kannst Einen <br> Blog Erstellen & die Beiträge lesen</p>
+    </div>
+    <div class ="btn2">
+      <blog-wall></blog-wall>
+    </div>
     <div class ="btn">
       <add-blog></add-blog>
     </div>
-    <div class ="btn2">
-    <blog-wall></blog-wall>
-    </div>
+    <space></space>
     <div class ="btn3">
       <dogalu-alter></dogalu-alter>
     </div>
+    <div class ="dog2">
+    <activedogb></activedogb>
+    </div>
+    <div class ="btn4">
+      <dogalu-bmi></dogalu-bmi>
+    </div>
   </div>
 </template>
+
 <script>
 import AddBlog from '@/components/AddBlog'
 import Activedog from '@/components/Activedog'
-import Space from '@/components/space'
 import BlogWall from '@/components/BlogWall'
 import DogaluAlter from '@/components/DogaluAlter'
+import DogaluBmi from '@/components/DogaluBmi'
+import Space from '@/components/space'
+import Activedogb from '@/components/Activedogb'
 export default {
-  components: { DogaluAlter, BlogWall, Space, Activedog, AddBlog }
+  components: { Activedogb, Space, DogaluBmi, DogaluAlter, BlogWall, Activedog, AddBlog }
 }
 </script>
 
 <style scoped>
 .btn{
-  position: absolute;
-  bottom: 350px;
-  left: 750px;
+  position: relative;
+  bottom: 0px;
+  left: 0px;
 }
+.btn2:hover{
+  border-color:rgba(255, 255, 255, 0.5) ;
+}
+.btn:hover{
+  border-color:rgba(255, 255, 255, 0.5) ;
+}
+
 .btn2{
-  position: absolute;
-  bottom: 310px;
-  left: 714px;
+  position: relative;
+  bottom: 0px;
 }
 .p{
   color: dimgray;
@@ -53,15 +69,27 @@ export default {
   font-weight: 600;
   font-family: "Roboto", sans-serif;
   text-decoration-thickness: 900% ;
-  position: absolute;
-  left: 470px;
-  bottom: 420px;
+  position: relative;
+  left: 0px;
+  bottom: 0px;
   font-size: 68px;
 }
 .dog{
+  position: relative;
+  width: 5%;
+  left:310px;
+  bottom: -199px;
+  z-index: 1;
+  transform: rotate(-45deg);
+}
+
+.dog2{
   position: absolute;
-  left: 510px;
-  bottom: 450px;
+  width: 5%;
+  left:850px;
+  bottom: -710px;
+  z-index: 1;
+  transform: rotate(40deg);
 }
 .cat{
   position: absolute;
@@ -74,7 +102,7 @@ export default {
 .section{
   background-image: linear-gradient(white, #ecf0f3);
   background-color:#ecf0f3;
-  padding: 40px 0px 0px 0px;
-  margin: 20px 0px 0px 0px;
+  padding: 24px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
 }
 </style>

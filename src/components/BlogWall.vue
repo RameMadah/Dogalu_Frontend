@@ -24,9 +24,15 @@ export default {
   font-weight: 600;
   font-family: "Roboto", sans-serif;
   text-decoration-thickness: 700%;
-  /*  color: #fff;*/
   background-color: #e4ecf4;
   border-color: rgba(163, 177, 198, 0.6);
+}
+.btn-primary:hover{
+  background-color: #e0e5ec;
+  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
+  transition-duration: 0.4s;
+  border-color: rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
 }
 
 label {
