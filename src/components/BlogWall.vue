@@ -1,5 +1,5 @@
 <template>
-  <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Beiträge Weltweit</button>
+  <button class="btn frstbtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Beiträge Weltweit</button>
   <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
     <div class="offcanvas-header">
       <h5 class="bolgtitle" id="offcanvasScrollingLabel">Weltweit Beiträge</h5>
@@ -48,6 +48,29 @@ export default {
 </script>
 
 <style scoped>
+.frstbtn{
+  margin: 0 1rem;
+  padding: 0.5rem 1.5rem;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  transition: color 0.2s ease-out, transform 0.2s ease-out;
+  color: dimgray;
+  transition-duration: 0.4s;
+  background-color: white ;
+  border: 0px solid #1f7976;
+  border-radius: 10px;
+  box-shadow: 9px 9px 16px #2c3e50, -9px -9px 16px #1f7976;
+}
+
+.frstbtn:hover{
+  color: black;
+  background-color: white;
+  box-shadow: 9px 9px 16px #2c3e50, -9px -9px 16px #1f7976;
+  transition-duration: 0.4s;
+  border-color:  #1f7976;
+  border-radius: 8px;
+  transform: scale(1.05)
+}
 .tex{
   color: dimgray;
   font-weight: 600;
@@ -72,7 +95,7 @@ export default {
 }
 .btn-primary {
   color: dimgray;
-  font-weight: 600;
+  font-weight: 300;
   margin: 15px;
   padding: 0.5rem 1.5rem;
   font-family: "Roboto", sans-serif;

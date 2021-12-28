@@ -1,8 +1,6 @@
 <template>
   <div class="progress">
-    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-      <span class="sr-only">100% Complete</span>
-    </div>
+    <div class="progress-bar bg-info" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
   </div>
 </template>
 
@@ -13,23 +11,7 @@ export default {
 </script>
 
 <style scoped>
-.progress {
-  width: 400px;
-  position: absolute;
-  left: 600px;
-}
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+.progress{
+  background: linear-gradient(270deg, rgba(34,193,195,1) 0%, rgba(30,79,85,1) 100%);
 }
 </style>

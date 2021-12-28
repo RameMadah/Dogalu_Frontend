@@ -1,6 +1,7 @@
 <template>
   <nnavbar></nnavbar>
   <router-view></router-view>
+  <progress-bar></progress-bar>
   <Footer></Footer>
 </template>
 
@@ -8,9 +9,10 @@
 
 import Nnavbar from '@/components/Nnavbar.vue'
 import Footer from '@/components/Footer'
+import ProgressBar from '@/components/ProgressBar'
 
 export default {
-  components: { Footer, Nnavbar }
+  components: { ProgressBar, Footer, Nnavbar }
 }
 
 </script>

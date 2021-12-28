@@ -1,30 +1,31 @@
 <template>
-  <button class="btn frstbtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Blog</button>
+  <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    Lektion hinzufügen</button>
 
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
-      <h5 id="offcanvasRightLabel"><p class="bolgtitle">Blogalu ..</p></h5>
+      <h5 id="offcanvasRightLabel"><p class="bolgtitle">Lektion ..</p></h5>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-
       <div class="mb-3">
         <label for="title" class="form-label"><strong>Titel :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></label>
         <input type="text" class="form-control" id="title"  placeholder=" "  v-model ="title">
       </div>
       <div class="mb-3">
-        <label for="author" class="form-label"><strong>Author :&nbsp;&nbsp;</strong></label>
-        <input type="text" class="form-control" id="author" placeholder=" " v-model ="author">
+        <label for="title" class="form-label"><strong>EXP :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></label>
+        <fieldset type="text" class="form-control" > Erfahrungs Punkte Werden automatisch berechnet je nach Ihr Lektion <br></fieldset>
       </div>
       <div class="mb-3">
-        <label class="form-label"><strong>Text :</strong></label>
+        <label class="form-label"><strong>Lektion :</strong></label>
         <textarea class="form-control" id="description"  rows="3" v-model = "description" ></textarea>
       </div>
       <div class="mt-5">
-        <button class="btn btn-primary me-3" type="submit" @click="createBlog()">hinzufügen</button>
+        <button class="btn btn-danger me-3" type="submit" @click="createBlog()">hinzufügen</button>
         <button class="btn btn-danger  mmm" type="reset" @click="reset()">Reset</button>
         <div class="low">
-        <sleepy-dog class ='sleepy'></sleepy-dog>
+          <sleepy-dog class ='sleepy'></sleepy-dog>
         </div>
       </div>
     </div>
@@ -35,24 +36,29 @@
 <script>
 import SleepyDog from '@/components/SleepyDog'
 export default {
-  name: 'AddBlog',
+  name: 'AddLesson',
   components: { SleepyDog },
   data () {
     return {
       title: '',
-      author: '',
-      description: ''
+      description: '',
+      punkte: ''
     }
   },
   methods: {
     createBlog () {
+      if (this.description.length < 500) { this.punkte = 5 }
+      if (this.description.length > 500) { this.punkte = 10 }
+      if (this.description.length > 1000) { this.punkte = 15 }
+      if (this.description.length > 1500) { this.punkte = 20 }
+      if (this.description.length > 2000) { this.punkte = 25 }
       var myHeaders = new Headers()
       myHeaders.append('Content-Type', 'application/json')
 
       var raw = JSON.stringify({
         title: this.title,
-        author: this.author,
-        description: this.description
+        description: this.description,
+        punkte: this.punkte
       })
 
       var requestOptions = {
@@ -61,7 +67,7 @@ export default {
         body: raw,
         redirect: 'follow'
       }
-      const base = process.env.VUE_APP_BACKEND_BASE_URL + '/api/v1/blogs'
+      const base = process.env.VUE_APP_BACKEND_BASE_URL + '/api/v1/lessons'
 
       fetch(base, requestOptions)
         .catch(error => console.log('error', error))
@@ -69,31 +75,16 @@ export default {
     },
     reset () {
       this.title = ''
-      this.author = ''
       this.description = ''
+      this.punkte = ''
     }
   }
 }
 </script>
 
 <style scoped>
-.frstbtn{
-  margin: 0 1rem;
-  padding: 0.5rem 1.5rem;
-  font-family: "Roboto", sans-serif;
-  cursor: pointer;
-  transition: color 0.2s ease-out, transform 0.2s ease-out;
-  color: dimgray;
-  transition-duration: 0.4s;
-  background-color: white ;
-  border: 0px solid #1f7976;
-  border-radius: 10px;
-  box-shadow: 9px 9px 16px #2c3e50, -9px -9px 16px #1f7976;
-}
-.btn:hover {
-  border-color: #1f7976;
-}
-.frstbtn:hover{
+
+.btn-primary:hover{
   color: black;
   background-color: white;
   box-shadow: 9px 9px 16px #2c3e50, -9px -9px 16px #1f7976;
@@ -102,14 +93,10 @@ export default {
   border-radius: 8px;
   transform: scale(1.05)
 }
-.btn-primary:hover{
-  background-color: white;
-  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
-  transition-duration: 0.4s;
-  border-color: rgba(255, 255, 255, 0.5);
-  border-radius: 8px;
-}
-
+.btn-check:active+.btn-primary, .btn-check:checked+.btn-primary, .btn-primary:active, .btn-primary:active, .show>.btn-primary:dropdown-toggle {
+  color:#1f7976;
+  background-color: whitesmoke;
+  border-color: #1f7976;}
 .bolgtitle{
   color: dimgray;
   font-weight: 600;
@@ -120,11 +107,11 @@ export default {
   bottom: 480px;
   font-size: 98px;
 }
-  .low {
+.low {
   position: absolute;
   bottom: 411px;
   left: -53px;
-    size: 30px;
+  size: 30px;
   width: 27.5vmax;
   height: 13.5vmax;
   display: flex;
@@ -246,13 +233,20 @@ body {
   box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
 }
 
-.btn-check:active+.btn-primary:focus, .btn-check:checked+.btn-primary:focus, .btn-primary.active:focus, .btn-primary:active:focus, .show>.btn-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.25rem rgb(163 177 198 / 50%);
+.me-3:hover{
+color: black;
 }
+
+/*.btn-check:active+.btn-primary:focus, .btn-check:checked+.btn-primary:focus, .btn-primary.active:focus, .btn-primary:active:focus, .show>.btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem rgb(163 177 198 / 50%);
+}*/
 
 .mmm{
   background-color: #e0e5ec;
   box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
+}
+.mmm:hover{
+  color: black;
 }
 
 .btn-primary {
@@ -263,10 +257,10 @@ body {
   transition: color 0.2s ease-out, transform 0.2s ease-out;
   color: dimgray;
   transition-duration: 0.4s;
-  background-color: white;
+  background-color: white ;
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 10px;
-  box-shadow: 4px 4px 6px 0 rgb(0 0 0 / 10%), -4px -4px 6px white;
+  box-shadow: 9px 9px 16px #2c3e50, -9px -9px 16px #1f7976;
 }
 .btn-check:active+.btn-danger:focus, .btn-check:checked+.btn-danger:focus, .btn-danger.active:focus, .btn-danger:active:focus, .show>.btn-danger.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.25rem rgb(163 177 198 / 50%);
@@ -326,9 +320,24 @@ textarea.form-control {
   box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #f9f9f9;
 }
 
+fieldset{
+  width: 350px;
+  height: 40px;
+  margin: 4px 0;
+  padding-left: 25px;
+  font-size: 13px;
+  letter-spacing: 0.15px;
+  border: none;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #ecf0f3;
+  transition: 0.25s ease;
+  border-radius: 8px;
+  box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #f9f9f9;
+  text-align: center;
+}
 input#author.form-control{
   width: 200px;
-  width: 350px;
   height: 40px;
   margin: 4px 0;
   padding-left: 25px;

@@ -7,6 +7,7 @@
       <p class="texts">Hier können Sie an Lektionen teilnehmen,<br>
         um Ihrem Hund gutes Benehmen beizubringen, und Sie können auch Ihre einzigartige Unterrichtserfahrung weitergeben.</p>
     </div>
+    <add-lesson></add-lesson>
   <space></space>
   </div>
   <gridcard></gridcard>
@@ -15,9 +16,10 @@
 <script>
 import Gridcard from '@/components/Gridcard'
 import Space from '@/components/space'
+import AddLesson from '@/components/AddLesson'
 export default {
   name: 'Lesson',
-  components: { Space, Gridcard }
+  components: { AddLesson, Space, Gridcard }
 }
 </script>
 

@@ -8,11 +8,15 @@
       <p>Willkomen in Blogalu</p>
       <p class="p">Hier kannst Einen <br> Blog Erstellen & die Beiträge lesen</p>
     </div>
+    <div class = "btnbackg">
     <div class ="btn2">
       <blog-wall></blog-wall>
     </div>
+      <br>
     <div class ="btn">
       <add-blog></add-blog>
+    </div>
+      <br>
     </div>
     <space></space>
     <div class ="btn3">
@@ -41,19 +45,16 @@ export default {
 </script>
 
 <style scoped>
+.btnbackg{
+  background: linear-gradient(270deg, rgba(34,193,195,1) 0%, rgba(30,79,85,1) 100%);
+}
+
 .headui{
   background: rgb(15,138,137);
   background: linear-gradient(90deg, rgba(15,138,137,0.8519782913165266) 0%, rgba(9,118,121,1) 100%, rgba(0,6,36,0.9136029411764706) 100%);
 }
-.btn{
-  position: relative;
-  bottom: 0px;
-  left: 0px;
-}
+
 .btn2:hover{
-  border-color:rgba(255, 255, 255, 0.5) ;
-}
-.btn:hover{
   border-color:rgba(255, 255, 255, 0.5) ;
 }
 
@@ -86,7 +87,7 @@ export default {
 .dog{
   position: relative;
   width: 5%;
-  left:310px;
+  left:280px;
   bottom: -199px;
   z-index: 1;
   transform: rotate(-45deg);
@@ -96,7 +97,7 @@ export default {
   position: absolute;
   width: 5%;
   left:850px;
-  bottom: -710px;
+  bottom: -1110px;
   z-index: 1;
   transform: rotate(40deg);
 }
@@ -111,7 +112,7 @@ export default {
 .section{
   background-image: linear-gradient(white, #ecf0f3);
   background-color:#ecf0f3;
-  padding: 24px 0px 0px 0px;
-  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  margin: 50px 0px 0px 0px;
 }
 </style>
