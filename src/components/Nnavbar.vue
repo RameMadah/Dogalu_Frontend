@@ -31,6 +31,9 @@ text-decoration-thickness: 700% ;}
 #a a.router-link-exact-active {
   color: orangered;
 }
+a:hover {
+  color: rgba(34,193,195,1);
+}
 .a li:not(.logo):hover, .a li:not(.logo):focus {
   color: orangered;}
 

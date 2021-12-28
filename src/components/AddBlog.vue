@@ -21,8 +21,8 @@
         <textarea class="form-control" id="description"  rows="3" v-model = "description" ></textarea>
       </div>
       <div class="mt-5">
-        <button class="btn btn-primary me-3" type="submit" @click.prevent="createBlog()">hinzufügen</button>
-        <button class="btn btn-danger  mmm" type="reset">Reset</button>
+        <button class="btn btn-primary me-3" type="submit" @click="createBlog()">hinzufügen</button>
+        <button class="btn btn-danger  mmm" type="reset" @click="reset()">Reset</button>
         <div class="low">
         <sleepy-dog class ='sleepy'></sleepy-dog>
         </div>
@@ -46,21 +46,44 @@ export default {
   },
   methods: {
     createBlog () {
-      console.log(this.title)
-      console.log(this.author)
-      console.log(this.description)
+      var myHeaders = new Headers()
+      myHeaders.append('Content-Type', 'application/json')
+
+      var raw = JSON.stringify({
+        title: this.title,
+        author: this.author,
+        description: this.description
+      })
+
+      var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+      }
+      const base = process.env.VUE_APP_BACKEND_BASE_URL + '/api/v1/blogs'
+
+      fetch(base, requestOptions)
+        .catch(error => console.log('error', error))
+      window.location.reload()
+    },
+    reset () {
+      this.title = ''
+      this.author = ''
+      this.description = ''
     }
   }
 }
 </script>
 
 <style scoped>
+
 .btn-primary:hover{
-  background-color: #e0e5ec;
+  background-color: white;
   box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
   transition-duration: 0.4s;
   border-color: rgba(255, 255, 255, 0.5);
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 .bolgtitle{
@@ -209,26 +232,42 @@ body {
 }
 
 .btn-primary {
-  color: dimgray;
-  font-weight: 600;
+  margin: 0 1rem;
+  padding: 0.5rem 1.5rem;
   font-family: "Roboto", sans-serif;
-  text-decoration-thickness: 700%;
-/*  color: #fff;*/
-  background-color: #e4ecf4;
-  border-color: rgba(163, 177, 198, 0.6);
+  cursor: pointer;
+  transition: color 0.2s ease-out, transform 0.2s ease-out;
+  color: dimgray;
+  transition-duration: 0.4s;
+  background-color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  box-shadow: 4px 4px 6px 0 rgb(0 0 0 / 10%), -4px -4px 6px white;
 }
 .btn-check:active+.btn-danger:focus, .btn-check:checked+.btn-danger:focus, .btn-danger.active:focus, .btn-danger:active:focus, .show>.btn-danger.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.25rem rgb(163 177 198 / 50%);
 }
 
 .btn-danger {
-  color: dimgray;
-  font-weight: 600;
+  margin: 0 1rem;
+  padding: 0.5rem 1.5rem;
   font-family: "Roboto", sans-serif;
-  text-decoration-thickness: 700%;
-/*  color: #fff;*/
-  background-color:#e4ecf4;
-  border-color: rgba(163, 177, 198, 0.6);
+  cursor: pointer;
+  transition: color 0.2s ease-out, transform 0.2s ease-out;
+  color: dimgray;
+  transition-duration: 0.4s;
+  background-color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  box-shadow: 4px 4px 6px 0 rgb(0 0 0 / 10%), -4px -4px 6px white;
+}
+
+.btn-danger:hover{
+  background-color: white;
+  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
+  transition-duration: 0.4s;
+  border-color: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
 }
 /*
   display: flex;

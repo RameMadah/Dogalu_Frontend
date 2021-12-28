@@ -5,8 +5,6 @@
           <div class="input-container">
             <input type="number" class="form-control" id="year" placeholder=" " v-model = "this.year">
             <br>
-            <button class="btn btn-primary me-3" type="submit" @click="calc()">Berechnen</button>
-            <button class="btn btn-primary me-3" type="submit" @click="clear()">Reset</button>
             <br>
           </div>
           <div class="calc-results">
@@ -16,7 +14,7 @@
                 <img   src="@/assets/se.png" alt="Kleine Hunde">
               </div>
               <output class="num-totals tex" data-default="total-small-dog">{{ this.small }}</output>
-              <h3 class="tex">kleine</h3>
+              <h3 class="tex">Klein</h3>
             </div>
             <div class="num-result center">
               <div class="imgg">
@@ -30,14 +28,19 @@
                 <img   src="@/assets/bb.png" alt="Größe Hunde">
               </div>
               <output class="num-totals tex" data-default="49">{{ this.big }}</output>
-              <h3 class="tex1">Gorß </h3>
+              <h3 class="tex1">Groß </h3>
             </div>
+            <br>
+            <br>
+            <button class="btn btn-primary me-3" type="submit" @click="calc()">Berechnen</button>
+            <button class="btn btn-primary me-3" type="submit" @click="clear()">Reset</button>
           </div>
           <br>
           <p class="disclaimer">*Bei der Erstellung dieses Rechners wurden keine Hunde verletzt.</p>
         </div>
       </div>
-      <br>
+      <div class="space">
+        </div>
 </template>
 
 <script>
@@ -69,6 +72,9 @@ export default {
 </script>
 
 <style scoped>
+.space{
+  height: 100px;
+}
 .form-control{
   position: relative;
   left: 320px;
@@ -82,7 +88,7 @@ export default {
   border: none;
   outline: none;
   font-family: 'Montserrat', sans-serif;
-  background-color: #ecf0f3;
+  background-color: white;
   transition: 0.25s ease;
   border-radius: 8px;
   box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #f9f9f9;
@@ -112,26 +118,30 @@ img{
   size: 24px;
 }
 .disclaimer{
-  color: dimgray;
-  font-weight: 600;
+  color: #aeafb9;
+  font-weight: 200;
   font-family: "Roboto", sans-serif;
-  text-decoration-thickness: 700%;
+  text-decoration-thickness: 200%;
   size: 24px;
 }
 
 .btn-primary {
-  color: dimgray;
-  font-weight: 600;
+  margin: 0 1rem;
+  padding: 0.5rem 1.5rem;
   font-family: "Roboto", sans-serif;
-  text-decoration-thickness: 700%;
-  /*  color: #fff;*/
-  background-color: #e4ecf4;
-  border-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: color 0.2s ease-out, transform 0.2s ease-out;
+  color: dimgray;
+  transition-duration: 0.4s;
+  background-color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  box-shadow: 4px 4px 6px 0 rgb(0 0 0 / 10%)/*, -4px -4px 6px white;*/
 }
 .btn-primary:hover{
-  background-color: #e0e5ec;
+  background-color: white;
   box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
-
+  border-radius: 10px;
 }
 
 label {
@@ -170,6 +180,7 @@ body {
   background-color: #ecf0f3;
   font-family: "Roboto", sans-serif;
   padding: 20px;
+
   max-width: 800px;
   margin: auto;
   box-shadow: 0px 10px 10px  rgba(0, 0, 0, 0.07);

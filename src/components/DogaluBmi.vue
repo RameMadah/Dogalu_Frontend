@@ -17,7 +17,6 @@
         <input class="questionr" type="number" id="weight" v-model="this.w">
       </div>
       <br>
-
       <div id="buttons">
         <div>
         <button class="calculate me-3" type="button" @click="calculatebmi();"> Calculate </button>
@@ -27,7 +26,7 @@
         <p class="question">  Dogalu Diagnostik  : </p>
         <output class="num-totals tex" data-default=" "> <p class="answer1"> {{ this.answer }}</p></output>
         <br>
-        <output class="num-totals tex" data-default=" "><p class="answer2">{{ this.bmi }}</p></output>
+        <output class="num-totals tex" data-default=" "><p class="answer1">{{ this.bmi }}</p></output>
       </div>
   </form>
   <br>
@@ -50,19 +49,19 @@ export default {
   },
   methods: {
     calculatebmi () {
-      this.bmi = this.w / (this.h * this.h) * 10000
+      this.bmi = (this.w / 0.45) / (this.h / 2.54)
       var num = Number(this.bmi)
       var roundedString = num.toFixed(2)
       this.bmi = Number(roundedString)
       this.t = this.bmi
-      if (this.bmi < 18) {
+      if (this.bmi < 5) {
         this.answer = 'Ihr Hund ist untergewichtig '
-      } if (this.bmi > 18 && this.t < 25) {
-        this.answer.equal(' Ihr Hund ist gesund ')
-      } if (this.bmi > 25 && this.t < 30) {
-        this.answer.equal(' Ihr Hund ist Übergewicht ')
+      } if (this.bmi > 10 && this.bmi < 15) {
+        this.answer = ' Ihr Hund ist gesund '
+      } if (this.bmi > 15 && this.bmi < 30) {
+        this.answer = 'Ihr Hund ist Übergewicht '
       } if (this.bmi > 30) {
-        this.answer.equal(' Ihr Hund ist  furchtbar ')
+        this.answer = ' Ihr Hund ist  furchtbar '
       }
     },
     clearBox () {
@@ -77,8 +76,22 @@ export default {
 </script>
 
 <style scoped>
+.me-3{
+  margin: 0 1rem;
+  padding: 0.5rem 1.5rem;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  transition: color 0.2s ease-out, transform 0.2s ease-out;
+  color: dimgray;
+  transition-duration: 0.4s;
+  background-color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  box-shadow: 4px 4px 6px 0 rgb(0 0 0 / 10%)/*, -4px -4px 6px white;*/
+}
+
 .space{
-  height: 300px;
+  height: 100px;
   background-color: white;
 }
 
@@ -132,7 +145,7 @@ form,
   font-weight: 600;
   font-family: "Roboto", sans-serif;
   text-decoration-thickness: 900% ;
-  font-size: 38px;
+  font-size: 28px;
 }
 .content {
   border-radius: 8px;
@@ -143,26 +156,31 @@ form,
   margin: auto;
   box-shadow: 0px 10px 10px  rgba(0, 0, 0, 0.07);
 }
-
-.calculate {
-  color: dimgray;
-  font-weight: 600;
-  font-family: "Roboto", sans-serif;
-  text-decoration-thickness: 500%;
-  padding: 5px ;
-  background-color: #e4ecf4;
-  border-color: rgba(255, 255, 255, 0.5);
-  border-radius: 4px;
-
+.calculate:hover {
+  background-color: white;
+  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+}
+.me-3:hover{
+  background-color: white;
+  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
 }
 
-.calculate:hover {
-  background-color: #e0e5ec;
-  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
+.calculate {
+  margin: 0 1rem;
+  padding: 0.5rem 1.5rem;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  transition: color 0.2s ease-out, transform 0.2s ease-out;
+  color: dimgray;
   transition-duration: 0.4s;
-  border-color: rgba(255, 255, 255, 0.5);
-  border-radius: 4px;
-  }
+  background-color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  box-shadow: 4px 4px 6px 0 rgb(0 0 0 / 10%)/*, -4px -4px 6px white;*/
+
+}
 
 .reset {
   color: dimgray;

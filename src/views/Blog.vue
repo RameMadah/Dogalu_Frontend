@@ -41,6 +41,10 @@ export default {
 </script>
 
 <style scoped>
+.headui{
+  background: rgb(15,138,137);
+  background: linear-gradient(90deg, rgba(15,138,137,0.8519782913165266) 0%, rgba(9,118,121,1) 100%, rgba(0,6,36,0.9136029411764706) 100%);
+}
 .btn{
   position: relative;
   bottom: 0px;
@@ -58,18 +62,23 @@ export default {
   bottom: 0px;
 }
 .p{
-  color: dimgray;
+  color: whitesmoke;
+  text-shadow: #2c3e50 1px 1px;
   font-weight: 600;
   font-family: "Roboto", sans-serif;
   text-decoration-thickness: 900% ;
   font-size: 18px;
 }
 .blog{
-  color: dimgray;
+  color: whitesmoke;
+  text-shadow: #1c3130 1px 1px;
   font-weight: 600;
   font-family: "Roboto", sans-serif;
   text-decoration-thickness: 900% ;
   position: relative;
+  padding: 20px;
+  background: rgb(34,193,195);
+  background: linear-gradient(270deg, rgba(34,193,195,1) 0%, rgba(30,79,85,1) 100%);
   left: 0px;
   bottom: 0px;
   font-size: 68px;

@@ -7,6 +7,15 @@
     </div>
     <div class="offcanvas-body">
       <p>Try scrolling the rest of the page to see this option in action.</p>
+      <div class="container overflow-hidden"  v-for= " blog in blogs" v-bind:key= "blog.id" >
+        <div class="row gy-5">
+          <div class="col-lg-12">
+            <div class="p-3 border bg-light"><p class="tex"> {{ blog.author }}</p></div>
+          </div>
+        </div>
+        <br>
+      </div>
+      <br>
     </div>
   </div>
 
@@ -14,25 +23,73 @@
 
 <script>
 export default {
-  name: 'BlogWall'
+  name: 'BlogWall',
+  data () {
+    return {
+      blogs: []
+    }
+  },
+  mounted () {
+    const base = process.env.VUE_APP_BACKEND_BASE_URL + '/api/v1/blogs'
+    const requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+    }
+
+    fetch(base, requestOptions)
+      .then(response => response.json())
+      .then(result => result.forEach(blog => {
+        this.blogs.push(blog)
+      }))
+      .catch(error => console.log('error', error))
+  }
 }
+
 </script>
 
 <style scoped>
-.btn-primary {
+.tex{
   color: dimgray;
   font-weight: 600;
   font-family: "Roboto", sans-serif;
-  text-decoration-thickness: 700%;
-  background-color: #e4ecf4;
-  border-color: rgba(163, 177, 198, 0.6);
+  text-decoration-thickness: 300% ;
+  font-size: 18px;
+}
+.bg-light{
+  height: fit-content;
+  margin: 4px 0;
+  padding-left: 25px;
+  font-size: 13px;
+  letter-spacing: 0.15px;
+  border: none;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #ecf0f3;
+  transition: 0.25s ease;
+  border-radius: 8px;
+  box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #f9f9f9;
+  text-align: center;
+}
+.btn-primary {
+  color: dimgray;
+  font-weight: 600;
+  margin: 15px;
+  padding: 0.5rem 1.5rem;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  transition: color 0.2s ease-out, transform 0.2s ease-out;
+  transition-duration: 0.4s;
+  background-color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  box-shadow: 4px 4px 6px 0 rgb(0 0 0 / 10%), -4px -4px 6px white;
 }
 .btn-primary:hover{
-  background-color: #e0e5ec;
+  background-color: white;
   box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
   transition-duration: 0.4s;
   border-color: rgba(255, 255, 255, 0.5);
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 label {
