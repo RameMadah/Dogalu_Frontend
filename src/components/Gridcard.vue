@@ -1,7 +1,10 @@
 <template>
   <div class="avatar"><AvatarDog></AvatarDog></div>
-  <div class="level">EXP : {{this.exp }} </div>
+  <div class="level"> <p class="xp">EXP : {{this.exp }}</p> </div>
       <section>
+        <div class="progress">
+          <div class="progress-bar" id="prog" role="progressbar" style="{{getbar() }}" aria-valuenow="50" aria-valuemin="50" aria-valuemax="100"  aria-valuetext="50"></div>
+        </div>
         <div class="row row-cols-3 row-cols-md-3 g-3">
             <div class="col"  v-for= " lesson in lessons" v-bind:key= "lesson.lid" >
               <div class="card h-100">
@@ -28,7 +31,7 @@
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Abbrechen</button>
-                        <button type="button" class="btn btn-primary" @click="getexp(lesson)">Akzeptieren</button>
+                        <button type="button" class="btn btn-primary" @click="getexp(lesson)" data-bs-dismiss="modal">Akzeptieren</button>
                       </div>
                     </div>
                   </div>
@@ -43,6 +46,7 @@
 </template>
 
 <script>
+
 import AvatarDog from '@/components/AvatarDog'
 export default {
   name: 'Gridcard',
@@ -56,6 +60,11 @@ export default {
   methods: {
     getexp (lesson) {
       this.exp = this.exp + parseInt(lesson.punkte)
+    },
+    getbar () {
+      var bar
+      bar.value = toString(this.exp) + '%'
+      return bar
     },
     getAvatar (lesson) {
       if (lesson.lid > 0) {
@@ -81,10 +90,25 @@ export default {
     if (lesson.description.length > 50) return lesson.description.substring(0, 50) + ' ...'
   }
 }
+
 </script>
 
 <style scoped>
+
+.progress{
+  color: #1f7976;
+  z-index: 6;
+}
+
+.xp{
+  position: absolute;
+  bottom: -15px;
+}
 .level{
+  /*font-family:impact;*/
+  font-size:50px;
+  font-style:italic;
+  text-shadow:#FFFFFF 3px 3px 0px, #FFFFFF 3px -3px 0px, #FFFFFF -3px -3px 0px, #FFFFFF -3px 3px 0px, #FFFFFF 3px 2px 0px, #FFFFFF 3px -2px 0px, #FFFFFF -3px -2px 0px, #FFFFFF -3px 2px 0px, #FFFFFF 3px 1px 0px, #FFFFFF 3px -1px 0px, #FFFFFF -3px -1px 0px, #FFFFFF -3px 1px 0px, #FFFFFF 3px 0 0px, #FFFFFF 3px 0 0px, #FFFFFF -3px 0 0px, #FFFFFF -3px 0 0px, #FFFFFF 2px 3px 0px, #FFFFFF 2px -3px 0px, #FFFFFF -2px -3px 0px, #FFFFFF -2px 3px 0px, #FFFFFF 2px 2px 0px, #FFFFFF 2px -2px 0px, #FFFFFF -2px -2px 0px, #FFFFFF -2px 2px 0px, #FFFFFF 2px 1px 0px, #FFFFFF 2px -1px 0px, #FFFFFF -2px -1px 0px, #FFFFFF -2px 1px 0px, #FFFFFF 2px 0 0px, #FFFFFF 2px 0 0px, #FFFFFF -2px 0 0px, #FFFFFF -2px 0 0px, #FFFFFF 1px 3px 0px, #FFFFFF 1px -3px 0px, #FFFFFF -1px -3px 0px, #FFFFFF -1px 3px 0px, #FFFFFF 1px 2px 0px, #FFFFFF 1px -2px 0px, #FFFFFF -1px -2px 0px, #FFFFFF -1px 2px 0px, #FFFFFF 1px 1px 0px, #FFFFFF 1px -1px 0px, #FFFFFF -1px -1px 0px, #FFFFFF -1px 1px 0px, #FFFFFF 1px 0 0px, #FFFFFF 1px 0 0px, #FFFFFF -1px 0 0px, #FFFFFF -1px 0 0px, #FFFFFF 0 3px 0px, #FFFFFF 0 -3px 0px, #FFFFFF 0 -3px 0px, #FFFFFF 0 3px 0px, #FFFFFF 0 2px 0px, #FFFFFF 0 -2px 0px, #FFFFFF 0 -2px 0px, #FFFFFF 0 2px 0px, #FFFFFF 0 1px 0px, #FFFFFF 0 -1px 0px, #FFFFFF 0 -1px 0px, #FFFFFF 0 1px 0px, #FFFFFF 0 0 0px, #FFFFFF 0 0 0px, #FFFFFF 0 0 0px, #FFFFFF 0 0 0px, #FFFFFF 0 0 0px, #717171 3px 3px 7px;
   height: 70px;
   align-content: center;
   position: absolute;

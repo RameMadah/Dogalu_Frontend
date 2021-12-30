@@ -6,19 +6,28 @@
       <h5 id="offcanvasRightLabel"><p class="bolgtitle">Blogalu ..</p></h5>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <div class="offcanvas-body">
+    <form class="offcanvas-body needs-validation" novalidate >
 
-      <div class="mb-3">
+      <div class="mb-3" >
         <label for="title" class="form-label"><strong>Titel :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></label>
-        <input type="text" class="form-control" id="title"  placeholder=" "  v-model ="title">
+        <input type="text" class="form-control" id="title"  placeholder=" "  v-model ="title" required>
+        <div class="invalid-feedback">
+          Bitte den Posttitel eingeben.
+        </div>
       </div>
       <div class="mb-3">
         <label for="author" class="form-label"><strong>Author :&nbsp;&nbsp;</strong></label>
-        <input type="text" class="form-control" id="author" placeholder=" " v-model ="author">
+        <input type="text" class="form-control" id="author" placeholder=" " v-model ="author" required>
+        <div class="invalid-feedback">
+          Bitte der Authorname eingeben.
+        </div>
       </div>
       <div class="mb-3">
         <label class="form-label"><strong>Text :</strong></label>
-        <textarea class="form-control" id="description"  rows="3" v-model = "description" ></textarea>
+        <input class="form-control" id="description" v-model="description" required >
+        <div class="invalid-feedback">
+          Bitte gemessene inhalt eingeben.
+        </div>
       </div>
       <div class="mt-5">
         <button class="btn btn-primary me-3" type="submit" @click="createBlog()">hinzufügen</button>
@@ -27,7 +36,7 @@
         <sleepy-dog class ='sleepy'></sleepy-dog>
         </div>
       </div>
-    </div>
+    </form>
   </div>
 
 </template>
@@ -46,37 +55,67 @@ export default {
   },
   methods: {
     createBlog () {
-      var myHeaders = new Headers()
-      myHeaders.append('Content-Type', 'application/json')
+      const valid = this.validate()
+      if (valid) {
+        var myHeaders = new Headers()
+        myHeaders.append('Content-Type', 'application/json')
 
-      var raw = JSON.stringify({
-        title: this.title,
-        author: this.author,
-        description: this.description
-      })
+        var raw = JSON.stringify({
+          title: this.title,
+          author: this.author,
+          description: this.description
+        })
 
-      var requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: raw,
-        redirect: 'follow'
+        var requestOptions = {
+          method: 'POST',
+          headers: myHeaders,
+          body: raw,
+          redirect: 'follow'
+        }
+        const base = process.env.VUE_APP_BACKEND_BASE_URL + '/api/v1/blogs'
+
+        fetch(base, requestOptions)
+          .catch(error => console.log('error', error))
       }
-      const base = process.env.VUE_APP_BACKEND_BASE_URL + '/api/v1/blogs'
-
-      fetch(base, requestOptions)
-        .catch(error => console.log('error', error))
-      window.location.reload()
     },
     reset () {
       this.title = ''
       this.author = ''
       this.description = ''
+    },
+    validate () {
+      var valid = true
+      var forms = document.querySelectorAll('.needs-validation')
+
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              valid = false
+              event.preventDefault()
+              event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+          }, false)
+        })
+      return valid
     }
   }
 }
 </script>
 
 <style scoped>
+.is-invalid~.invalid-feedback, .is-invalid~.invalid-tooltip, .was-validated :invalid~.invalid-feedback, .was-validated :invalid~.invalid-tooltip {
+  display: block;
+  align-content: start;
+  position: relative;
+  left: -343px;
+}
+.invalid-feedback{
+  z-index: 7;
+}
 .frstbtn{
   margin: 0 1rem;
   padding: 0.5rem 1.5rem;
@@ -347,6 +386,21 @@ input#title.form-control{
   width: 200px;
   width: 350px;
   height: 40px;
+  margin: 4px 0;
+  padding-left: 25px;
+  font-size: 13px;
+  letter-spacing: 0.15px;
+  border: none;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #ecf0f3;
+  transition: 0.25s ease;
+  border-radius: 8px;
+  box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #f9f9f9;
+}
+
+input#description.form-control{
+  min-height: calc(20.5em + 0.75rem + 2px);
   margin: 4px 0;
   padding-left: 25px;
   font-size: 13px;

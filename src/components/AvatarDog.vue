@@ -27,9 +27,9 @@
       <div class="dog__body">
         <div class="dog__tail"></div>
       </div>
-      <div class="dog__ear-l"></div>
       <div class="dog__head">
         <div class="dog__snout">
+          <div class="dog__ear-l"></div>
           <div class="dog__nose"></div>
           <div class="dog__eyes">
             <div class="dog__eye-l"></div>
@@ -197,7 +197,7 @@ body {
   height: 0.375vmax;
   border-radius: 50%;
   background-color: #1c3130;
-  animation: eye 600s cubic-bezier(0.3, 0.41, 0.18, 1.01) infinite;
+  animation: eye 900000s cubic-bezier(0.3, 0.41, 0.18, 1.01) infinite;
 }
 .dog__eye-l {
   left: 27%;
@@ -340,13 +340,13 @@ body {
     transform: rotateZ(30deg);
   }
   5%, 15%, 22%, 24% {
-    transform: rotateZ(40deg);
+    transform: rotateZ(10deg);
   }
   30%, 31% {
-    transform: rotateZ(70deg);
+    transform: rotateZ(10deg);
   }
   32%, 80% {
-    transform: rotateZ(60deg);
+    transform: rotateZ(30deg);
   }
 }
 @keyframes ear-r {
@@ -357,10 +357,10 @@ body {
     transform: rotateZ(-18deg);
   }
   30%, 31% {
-    transform: rotateZ(-10deg);
+    transform: rotateZ(-0deg);
   }
   32% {
-    transform: rotateZ(-25deg);
+    transform: rotateZ(-250);
   }
 }
 @keyframes snout {

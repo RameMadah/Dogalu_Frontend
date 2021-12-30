@@ -11,7 +11,7 @@
     <div class="offcanvas-body">
       <div class="mb-3">
         <label for="title" class="form-label"><strong>Titel :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></label>
-        <input type="text" class="form-control" id="title"  placeholder=" "  v-model ="title">
+        <input type="text" class="form-control" id="title"  placeholder=" "  v-model ="title" required>
       </div>
       <div class="mb-3">
         <label for="title" class="form-label"><strong>EXP :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></label>
@@ -19,7 +19,7 @@
       </div>
       <div class="mb-3">
         <label class="form-label"><strong>Lektion :</strong></label>
-        <textarea class="form-control" id="description"  rows="3" v-model = "description" ></textarea>
+        <textarea class="form-control" id="description"  rows="3" v-model = "description" required ></textarea>
       </div>
       <div class="mt-5">
         <button class="btn btn-danger me-3" type="submit" @click="createBlog()">hinzufügen</button>
