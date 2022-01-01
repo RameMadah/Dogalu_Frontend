@@ -19,7 +19,7 @@
       <br>
       <div id="buttons">
         <div>
-        <button class="calculate me-3" type="button" @click="calculatebmi();"> Calculate </button>
+        <button class="calculate me-3" type="button" id="calc" @click="calculatebmi();"> Calculate </button>
         <button class="calculate me-3" type="reset" value="Reset" @click="clearBox();">Reset</button>
         </div>
         <br>

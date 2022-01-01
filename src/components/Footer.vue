@@ -28,9 +28,9 @@
             </ul>
           </div>
           <div class="footer-list-wrap">
-            <h6 class="ftr-hdr">About Art.com</h6>
+            <h6 class="ftr-hdr">About Dogalu.com</h6>
             <ul class="ftr-links-sub">
-              <li><a href="/asp/aboutus/default-asp/_/posters.htm" rel="nofollow">Our Company</a></li>
+              <li><a href="/asp/aboutus/default-asp/_/posters.htm" rel="nofollow">Unser App</a></li>
               <li><a href="http://corporate.art.com/careers" rel="nofollow">Careers</a></li>
               <li><a href="/asp/landing/artistrising" rel="nofollow">Artist Rising</a></li>
               <li><a href="/~/art-for-business" rel="nofollow">Business &amp; Trade Sales</a></li>

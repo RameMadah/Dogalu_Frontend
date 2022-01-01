@@ -10,7 +10,7 @@
     <add-lesson></add-lesson>
   <space></space>
   </div>
-  <gridcard></gridcard>
+  <gridcard :lessons="this.lessons"> </gridcard>
 </template>
 
 <script>
@@ -18,8 +18,38 @@ import Gridcard from '@/components/Gridcard'
 import Space from '@/components/space'
 import AddLesson from '@/components/AddLesson'
 export default {
-  name: 'Lesson',
-  components: { AddLesson, Space, Gridcard }
+  name: 'Lessons',
+  components: {
+    AddLesson,
+    Space,
+    Gridcard
+  },
+  methods: {
+    addLesson (lessonLocation) {
+      const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + lessonLocation
+      const requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+      }
+      fetch(endpoint, requestOptions)
+        .then(response => response.json())
+        .then(person => this.persons.push(person))
+        .catch(error => console.log('error', error))
+    }
+  },
+  mounted () {
+    const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/api/v1/lessons'
+    const requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+    }
+    fetch(endpoint, requestOptions)
+      .then(response => response.json())
+      .then(result => result.forEach(lesson => {
+        this.lessons.push(lesson)
+      }))
+      .catch(error => console.log('error', error))
+  }
 }
 </script>
 

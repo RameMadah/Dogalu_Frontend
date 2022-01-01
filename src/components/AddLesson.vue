@@ -8,10 +8,10 @@
       <h5 id="offcanvasRightLabel"><p class="bolgtitle">Lektion ..</p></h5>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <div class="offcanvas-body">
+    <form class="offcanvas-body">
       <div class="mb-3">
         <label for="title" class="form-label"><strong>Titel :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></label>
-        <input type="text" class="form-control" id="title"  placeholder=" "  v-model ="title" required>
+        <input type="text" class="form-control" id="title"  v-model ="title" required>
       </div>
       <div class="mb-3">
         <label for="title" class="form-label"><strong>EXP :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></label>
@@ -22,13 +22,13 @@
         <textarea class="form-control" id="description"  rows="3" v-model = "description" required ></textarea>
       </div>
       <div class="mt-5">
-        <button class="btn btn-danger me-3" type="submit" @click="createBlog()">hinzufügen</button>
+        <button class="btn btn-danger me-3" id="create" type="submit" @click="createBlog()">hinzufügen</button>
         <button class="btn btn-danger  mmm" type="reset" @click="reset()">Reset</button>
         <div class="low">
           <sleepy-dog class ='sleepy'></sleepy-dog>
         </div>
       </div>
-    </div>
+    </form>
   </div>
 
 </template>

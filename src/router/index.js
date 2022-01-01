@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
-import Lesson from '@/views/Lesson'
+import Lessons from '@/views/Lesson'
 
 const routes = [
   {
@@ -11,7 +11,7 @@ const routes = [
   {
     path: '/lesson',
     name: 'Lesson',
-    component: Lesson
+    component: Lessons
   },
   {
     path: '/blog',

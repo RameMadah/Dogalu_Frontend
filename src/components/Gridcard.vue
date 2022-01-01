@@ -12,7 +12,7 @@
                 <div class="card-body">
                   <h5 class="card-title">
                     {{ lesson.title }}</h5>
-                  <p class="card-text">{{lesson.description.substring(0,250) + '... Weiter lesen'}} </p>
+                  <p class="card-text" >{{lesson.description.substring(0,250) + '... Weiter lesen'}} </p>
                 </div>
                 <div class="btnprdiv">
                 <button type="button" class="btn btnpr" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -23,7 +23,7 @@
                   <div class="modal-dialog ">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">{{ lesson.title }}</h5>
+                        <h5 class="modal-title" id="exampleModalLabel" data-test="w">{{ lesson.title }}</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
@@ -48,8 +48,12 @@
 <script>
 
 import AvatarDog from '@/components/AvatarDog'
+
 export default {
   name: 'Gridcard',
+  props: {
+    title: String
+  },
   components: { AvatarDog },
   data () {
     return {

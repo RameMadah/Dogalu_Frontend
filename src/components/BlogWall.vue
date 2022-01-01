@@ -10,7 +10,7 @@
       <div class="container overflow-hidden"  v-for= " blog in blogs" v-bind:key= "blog.id" >
         <div class="row gy-5">
           <div class="col-lg-12">
-            <div class="p-3 border bg-light"><p class="tex"> {{ blog.author }}</p></div>
+            <div class="p-3 border bg-light"><p class="tex"> {{ blog.description }}</p></div>
           </div>
         </div>
         <br>
