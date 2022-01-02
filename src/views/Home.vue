@@ -1,6 +1,5 @@
 <template>
   <carosel></carosel>
-
     <widecard></widecard>
   <progress-bar></progress-bar>
     <accordion></accordion>

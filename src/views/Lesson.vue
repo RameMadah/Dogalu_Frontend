@@ -1,7 +1,8 @@
 <template>
   <div class="sp"></div>
   <div class="headui">
-  <space></space>
+  <space>
+  </space>
     <div >
       <h1 class="text" > Lektionen </h1>
       <p class="texts">Hier können Sie an Lektionen teilnehmen,<br>

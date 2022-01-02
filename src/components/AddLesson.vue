@@ -25,7 +25,7 @@
         <button class="btn btn-danger me-3" id="create" type="submit" @click="createBlog()">hinzufügen</button>
         <button class="btn btn-danger  mmm" type="reset" @click="reset()">Reset</button>
         <div class="low">
-          <sleepy-dog class ='sleepy'></sleepy-dog>
+          <sleepy-dog class ='sleepyy'></sleepy-dog>
         </div>
       </div>
     </form>
@@ -71,7 +71,6 @@ export default {
 
       fetch(base, requestOptions)
         .catch(error => console.log('error', error))
-      window.location.reload()
     },
     reset () {
       this.title = ''
@@ -122,6 +121,7 @@ export default {
 
 .sleepy{
   position: absolute;
+  bottom: -470px;
 }
 body {
   background: #f0f0f3;

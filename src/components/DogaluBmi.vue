@@ -54,7 +54,7 @@ export default {
       var roundedString = num.toFixed(2)
       this.bmi = Number(roundedString)
       this.t = this.bmi
-      if (this.bmi < 5) {
+      if (this.bmi <= 9) {
         this.answer = 'Ihr Hund ist untergewichtig '
       } if (this.bmi > 10 && this.bmi < 15) {
         this.answer = ' Ihr Hund ist gesund '

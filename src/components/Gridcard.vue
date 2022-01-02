@@ -98,7 +98,12 @@ export default {
 </script>
 
 <style scoped>
-
+.avatar{
+  z-index: 77;
+  position: absolute;
+  left: 60px;
+  bottom: 169px;
+}
 .progress{
   color: #1f7976;
   z-index: 6;

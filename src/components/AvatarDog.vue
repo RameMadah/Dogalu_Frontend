@@ -1,6 +1,6 @@
 <template>
   <!DOCTYPE html>
-  <html lang="es" dir="ltr">
+  <html lang="es" >
 
   <head>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
@@ -59,6 +59,7 @@ export default {
   padding: 0;
   box-sizing: border-box;
   user-select: none;
+  z-index: 89;
 }
 /* Generic */
 body {
@@ -68,6 +69,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #fdfbfd;
+  z-index: 89;
 }
 .main {
   position: relative;
