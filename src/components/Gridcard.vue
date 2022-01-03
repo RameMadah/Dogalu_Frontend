@@ -1,6 +1,6 @@
 <template>
   <div class="avatar"><AvatarDog></AvatarDog></div>
-  <div class="level"> <p class="xp">EXP : {{this.exp }}</p> </div>
+  <div class="level"> <p class="xp">EXP : {{this.exp}}</p></div>
       <section>
         <div class="progress">
           <div class="progress-bar" id="prog" role="progressbar" style="{{getbar() }}" aria-valuenow="50" aria-valuemin="50" aria-valuemax="100"  aria-valuetext="50"></div>
@@ -31,7 +31,7 @@
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Abbrechen</button>
-                        <button type="button" class="btn btn-primary" @click="getexp(lesson)" data-bs-dismiss="modal">Akzeptieren</button>
+                        <button type="button" class="btn btn-primary" @click="getexp(lesson.punkte)" data-bs-dismiss="modal">Akzeptieren</button>
                       </div>
                     </div>
                   </div>
@@ -62,8 +62,9 @@ export default {
     }
   },
   methods: {
-    getexp (lesson) {
-      this.exp = this.exp + parseInt(lesson.punkte)
+    getexp (e) {
+      this.exp += parseInt(e)
+      return this.exp
     },
     getbar () {
       var bar

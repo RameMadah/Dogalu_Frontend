@@ -103,12 +103,12 @@ export default {
   text-decoration-thickness: 900% ;
   position: absolute;
   left: 590px;
-  bottom: 480px;
+  bottom: 530px;
   font-size: 98px;
 }
 .low {
   position: absolute;
-  bottom: 411px;
+  bottom: 480px;
   left: -53px;
   size: 30px;
   width: 27.5vmax;
@@ -119,9 +119,9 @@ export default {
   margin-left: 900px;
 }
 
-.sleepy{
+.sleepyy{
   position: absolute;
-  bottom: -470px;
+  bottom: 90px;
 }
 body {
   background: #f0f0f3;
