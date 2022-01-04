@@ -100,10 +100,11 @@ export default {
 
 <style scoped>
 .avatar{
-  z-index: 77;
-  position: absolute;
-  left: 60px;
-  bottom: 169px;
+  z-index: 7;
+  position: relative;
+  left: 20%;
+  bottom: 109px;
+  width: 10%;
 }
 .progress{
   color: #1f7976;
@@ -112,27 +113,28 @@ export default {
 
 .xp{
   position: absolute;
-  bottom: -15px;
+  bottom: -25px;
+  padding: -30px 10px;
 }
 .level{
   /*font-family:impact;*/
   font-size:50px;
   font-style:italic;
   text-shadow:#FFFFFF 3px 3px 0px, #FFFFFF 3px -3px 0px, #FFFFFF -3px -3px 0px, #FFFFFF -3px 3px 0px, #FFFFFF 3px 2px 0px, #FFFFFF 3px -2px 0px, #FFFFFF -3px -2px 0px, #FFFFFF -3px 2px 0px, #FFFFFF 3px 1px 0px, #FFFFFF 3px -1px 0px, #FFFFFF -3px -1px 0px, #FFFFFF -3px 1px 0px, #FFFFFF 3px 0 0px, #FFFFFF 3px 0 0px, #FFFFFF -3px 0 0px, #FFFFFF -3px 0 0px, #FFFFFF 2px 3px 0px, #FFFFFF 2px -3px 0px, #FFFFFF -2px -3px 0px, #FFFFFF -2px 3px 0px, #FFFFFF 2px 2px 0px, #FFFFFF 2px -2px 0px, #FFFFFF -2px -2px 0px, #FFFFFF -2px 2px 0px, #FFFFFF 2px 1px 0px, #FFFFFF 2px -1px 0px, #FFFFFF -2px -1px 0px, #FFFFFF -2px 1px 0px, #FFFFFF 2px 0 0px, #FFFFFF 2px 0 0px, #FFFFFF -2px 0 0px, #FFFFFF -2px 0 0px, #FFFFFF 1px 3px 0px, #FFFFFF 1px -3px 0px, #FFFFFF -1px -3px 0px, #FFFFFF -1px 3px 0px, #FFFFFF 1px 2px 0px, #FFFFFF 1px -2px 0px, #FFFFFF -1px -2px 0px, #FFFFFF -1px 2px 0px, #FFFFFF 1px 1px 0px, #FFFFFF 1px -1px 0px, #FFFFFF -1px -1px 0px, #FFFFFF -1px 1px 0px, #FFFFFF 1px 0 0px, #FFFFFF 1px 0 0px, #FFFFFF -1px 0 0px, #FFFFFF -1px 0 0px, #FFFFFF 0 3px 0px, #FFFFFF 0 -3px 0px, #FFFFFF 0 -3px 0px, #FFFFFF 0 3px 0px, #FFFFFF 0 2px 0px, #FFFFFF 0 -2px 0px, #FFFFFF 0 -2px 0px, #FFFFFF 0 2px 0px, #FFFFFF 0 1px 0px, #FFFFFF 0 -1px 0px, #FFFFFF 0 -1px 0px, #FFFFFF 0 1px 0px, #FFFFFF 0 0 0px, #FFFFFF 0 0 0px, #FFFFFF 0 0 0px, #FFFFFF 0 0 0px, #FFFFFF 0 0 0px, #717171 3px 3px 7px;
-  height: 70px;
+  height: 60px;
   align-content: center;
-  position: absolute;
+  position: relative;
   align-self: center;
   align-items: center;
   display: block;
-  bottom: 370px;
-  left: 292px;
+  bottom:390px;
+  left: 60px;
   width: 50%;
   z-index: 4;
   border-radius: 10px;
   background-color: #ecf0f3;
   font-family: "Roboto", sans-serif;
-  padding: 20px;
+  padding: 20px 20px;
   max-width: 800px;
   margin: auto;
   box-shadow: 0px 10px 10px rgb(0 0 0 / 7%);

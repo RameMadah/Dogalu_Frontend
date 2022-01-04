@@ -103,25 +103,30 @@ export default {
   text-decoration-thickness: 900% ;
   position: absolute;
   left: 590px;
-  bottom: 530px;
+  bottom: 600px;
   font-size: 98px;
+  padding: 10px;
 }
 .low {
-  position: absolute;
-  bottom: 480px;
-  left: -53px;
-  size: 30px;
-  width: 27.5vmax;
-  height: 13.5vmax;
+  padding: 10px 10px 10px 10px;
+  position: relative;
+  bottom: 680px;
+  box-sizing: content-box;
+  left: 20%;
+  size: 10px 10px;
+  width: 5%;
+  height: 5%;
   display: flex;
   justify-content: right;
   align-items: center;
   margin-left: 900px;
+  z-index: 88;
 }
 
 .sleepyy{
   position: absolute;
   bottom: 90px;
+  height: 20px;
 }
 body {
   background: #f0f0f3;
