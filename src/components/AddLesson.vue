@@ -83,6 +83,25 @@ export default {
 
 <style scoped>
 
+.btn-check:focus+.btn-primary, .btn-primary:focus, .btn-primary:focus {
+  color: black;
+  background-color: whitesmoke!important;
+  border-color: whitesmoke;
+  box-shadow: 0px 10px 10px rgb(0 0 0 / 7%);
+}
+.btn-check:active+.btn-primary, .btn-check:checked+.btn-primary, .btn-primary.active, .btn-primary:active, .show>.btn-primary.dropdown-toggle {
+  color: black;
+  background-color: whitesmoke!important;
+  border-color: whitesmoke;
+  box-shadow: 0px 10px 10px rgb(0 0 0 / 7%);
+}
+button:focus:not(:focus-visible) {
+  color: black;
+  background-color: whitesmoke!important;
+  border-color: whitesmoke;
+  box-shadow: 0px 10px 10px rgb(0 0 0 / 7%);
+}
+
 .btn-primary:hover{
   color: black;
   background-color: white;
@@ -92,10 +111,12 @@ export default {
   border-radius: 8px;
   transform: scale(1.05)
 }
+
 .btn-check:active+.btn-primary, .btn-check:checked+.btn-primary, .btn-primary:active, .btn-primary:active, .show>.btn-primary:dropdown-toggle {
   color:#1f7976;
   background-color: whitesmoke;
   border-color: #1f7976;}
+
 .bolgtitle{
   color: dimgray;
   font-weight: 600;
@@ -103,30 +124,24 @@ export default {
   text-decoration-thickness: 900% ;
   position: absolute;
   left: 590px;
-  bottom: 600px;
+  bottom: 480px;
   font-size: 98px;
-  padding: 10px;
 }
 .low {
-  padding: 10px 10px 10px 10px;
-  position: relative;
-  bottom: 680px;
-  box-sizing: content-box;
-  left: 20%;
-  size: 10px 10px;
-  width: 5%;
-  height: 5%;
+  position: absolute;
+  bottom: 411px;
+  left: -53px;
+  size: 30px;
+  width: 27.5vmax;
+  height: 13.5vmax;
   display: flex;
   justify-content: right;
   align-items: center;
   margin-left: 900px;
-  z-index: 88;
 }
 
 .sleepyy{
   position: absolute;
-  bottom: 90px;
-  height: 20px;
 }
 body {
   background: #f0f0f3;

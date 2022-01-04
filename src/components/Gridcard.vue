@@ -99,10 +99,11 @@ export default {
 </script>
 
 <style scoped>
+
 .avatar{
   z-index: 7;
   position: relative;
-  left: 20%;
+  left: 5%;
   bottom: 109px;
   width: 10%;
 }
