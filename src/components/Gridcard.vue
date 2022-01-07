@@ -68,7 +68,7 @@ export default {
     },
     getbar () {
       var bar
-      bar.value = toString(this.exp) + '%'
+      getSelection('#prog').value = toString(this.exp) + '%'
       return bar
     },
     getAvatar (lesson) {

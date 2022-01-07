@@ -36,7 +36,7 @@ export default {
   created () { this.setup() },
   methods: {
     async setup () {
-      if (this.$root.authenticated) { this.claims = ((await this.$auth.getUser())) }
+      if (this.$root.authenticated) { this.claims = ((await this.$auth.getUser()).email) }
     }
   }
 }

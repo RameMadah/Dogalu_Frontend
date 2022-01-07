@@ -12,9 +12,32 @@ import Footer from '@/components/Footer'
 import ProgressBar from '@/components/ProgressBar'
 
 export default {
-  components: { ProgressBar, Footer, Nnavbar }
+  name: 'app',
+  components: {
+    ProgressBar,
+    Footer,
+    Nnavbar
+  },
+  data: function () {
+    return { authenticated: false }
+  },
+  async created () {
+    await this.isAuthenticated()
+    this.$auth.authStateManager.subscribe(this.isAuthenticated)
+  },
+  watch: {
+    // Everytime the route changes, check for auth status
+    $route: 'isAuthenticated'
+  },
+  methods: {
+    async isAuthenticated () {
+      this.authenticated = await this.$auth.isAuthenticated()
+    },
+    async logout () {
+      await this.$auth.signOut()
+    }
+  }
 }
-
 </script>
 
 <style>

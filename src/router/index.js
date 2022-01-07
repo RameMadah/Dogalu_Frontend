@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
 import Lessons from '@/views/Lesson'
-import Login from '@/views/Login'
-import Register from '@/views/Register'
-
+import { LoginCallback } from '@okta/okta-vue'
+import Profile from '@/components/Profile'
+import Login from '@/components/Login'
+import Home from '../views/Home.vue'
 const routes = [
   {
     path: '/',
@@ -11,14 +11,21 @@ const routes = [
     component: Home
   },
   {
-    path: '/sign-in',
+    path: '/login/callback',
+    component: LoginCallback
+  },
+  {
+    path: '/login',
     name: 'Login',
     component: Login
   },
   {
-    path: '/register',
-    name: 'Register',
-    component: Register
+    path: '/profile',
+    name: 'Profile',
+    component: Profile,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/lesson',
@@ -40,5 +47,5 @@ const router = createRouter({
   linkActiveClass: 'A',
   routes
 })
-
+// router.beforeEach(navigationGuard)
 export default router

@@ -43,14 +43,14 @@
           <div class="footer-list-wrap">
             <h6 class="ftr-hdr">Mein Konto</h6>
             <ul class="ftr-links-sub">
-              <art:content rule="!loggedin">
-                <li class="ftr-Login"><router-link to="/Sign-in"><a>anmelden</a></router-link></li>
-                <li><router-link to="/register"><a>Regestrieren</a></router-link></li>
-              </art:content>
-              <art:content rule="loggedin">
-                <li class="ftr-Login"><span class="link ftr-access-my-account">Mein Profil</span></li>
+              <div rule="!loggedin">
+                <li class="ftr-Login"><router-link to="/login"><a>anmelden</a></router-link></li>
+                <li><router-link to="/login"><a>Regestrieren</a></router-link></li>
+              </div>
+              <div rule="loggedin">
+                <li class="ftr-Login"><router-link to="/profile"><a>Mein Profile</a></router-link></li>
                 <li><router-link to="/blog"><a>Blogs-Wall</a></router-link>></li>
-              </art:content>
+              </div>
             </ul>
           </div>
           <!--/.footer-list-wrap-->
