@@ -1,14 +1,8 @@
 import { mount, shallowMount } from '@vue/test-utils'
 import HelloWorld from '@/components/HelloWorld.vue'
 import Gridcard from '@/components/Gridcard'
-import App from '@/App'
 
-describe('Mounted App', () => {
-  const wrapper = mount(App)
-
-  it('should does a wrapper exist', () => {
-    expect(wrapper.exists()).toBe(true)
-  })
+describe('general components of App', () => {
   it('renders the correct markup & check html', () => {
     const wrapper = mount(Gridcard)
     expect(wrapper.html(Gridcard)).toContain('EXP')
