@@ -162,11 +162,10 @@ export default {
   align-items: center;
   margin-left: 900px;
     width: 20%;
+    z-index: 10;
 }
 
 .sleepy{
-  position: absolute;
-  width: 20%;
 }
 body {
   background: #f0f0f3;
