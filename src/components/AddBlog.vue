@@ -11,11 +11,11 @@
     <form class="offcanvas-body">
       <div class="mb-3">
         <label for="title" class="form-label"><strong>Titel :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></label>
-        <input type="text" class="form-control" id="title"  v-model ="this.title" >
+        <input type="text" class="form-control" id="title"  v-model ="this.title" required>
       </div>
       <div class="mb-3">
         <label for="title" class="form-label"><strong>author :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></label>
-        <input type="text" class="form-control" id="author" v-model ="this.author" >  <br>
+        <input type="text" class="form-control" id="author" v-model ="this.author" required>  <br>
       </div>
       <div class="mb-3">
         <label class="form-label"><strong>Text :</strong></label>
