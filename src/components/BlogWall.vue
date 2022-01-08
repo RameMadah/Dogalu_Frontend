@@ -6,7 +6,7 @@
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-      <p>Try scrolling the rest of the page to see this option in action.</p>
+      <p>Hier werden Blogs und Beiträge gesammelt und veröffentlicht, die Sie sich ansehen können.</p>
       <div class="container overflow-hidden"  v-for= " blog in blogs" v-bind:key= "blog.id" >
         <div class="row gy-5">
           <div class="col-lg-12">

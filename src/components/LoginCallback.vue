@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import Profile from '@/components/Profile'
+import Profile from '@/views/Profile'
 export default {
   name: 'LoginCallback',
   components: { Profile }

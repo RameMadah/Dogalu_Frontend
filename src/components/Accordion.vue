@@ -29,7 +29,7 @@
         <div>
           <h2>Bildungswesen</h2>
           <p>Lektion absolvieren und eine Lektion mitteilen (Bereich Lesson )
-            "Durch einem Klick auf [Lektion hizufügen] erlänt man zu einem Formular zu Ausfüllen.</p>
+            "Durch einen Klick auf [Lektion hizufügen] erlängt man zu einem Formular, dieser kann ausgefüllt und geteilt.</p>
           <a href="#" class="btn btn-primary">
             <router-link to="/lesson"><a>Lektion hinzufügen</a></router-link>
           </a>

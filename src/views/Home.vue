@@ -1,15 +1,16 @@
 <template>
   <div id="home">
     <div v-if="!this.$root.authenticated">
-      <space></space>
-      <p>Willkomen bei Dogalu</p>
+      <div class="greeting">
+      <p class="writeq">Willkomen bei Dogalu</p>
+      </div>
     </div>
     <div v-if="this.$root.authenticated">
-      <p>Welcome back, {{claims.name}}!</p>
-      <p>
-        You have successfully authenticated with Okta!
-        Visit the <a href="/profile">My Profile</a> page to take a look inside the ID token.
+      <div class="greeting">
+      <p class="write" >Willkommen zurück, {{claims.name}}!</p>
+      <p class="write">Sie haben sich erfolgreich eingeloggt und können nun die Dogalu-Funktionen entdecken
       </p>
+      </div>
     </div>
     <carosel></carosel>
     <widecard></widecard>
@@ -23,11 +24,9 @@ import ProgressBar from '@/components/ProgressBar'
 import Carosel from '@/components/Carosel'
 import Accordion from '@/components/Accordion'
 import Widecard from '@/components/widecard'
-import Space from '@/components/space'
-
 export default {
   name: 'Home',
-  components: { Space, ProgressBar, Carosel, Accordion, Widecard },
+  components: { ProgressBar, Carosel, Accordion, Widecard },
   data: function () {
     return {
       claims: ''
@@ -43,11 +42,39 @@ export default {
 </script>
 
 <style scoped>
-p{
+.write{
   margin-right: auto;
   font-family: "Roboto", sans-serif;
-  font-size: 2.5rem;
-  color: dimgray;
-  font-weight: 900;
+  font-size: 18px;
+  color: white;
+  font-weight: 500;
+}
+
+.writeq{
+  color: whitesmoke;
+  text-shadow: #1c3130 1px 1px;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  text-decoration-thickness: 900% ;
+  margin-right: auto;
+  font-size: 48px;
+}
+
+.greeting{
+  border-color: #2a313b;
+  z-index: 5;
+  width: 50%;
+  backdrop-filter: blur(7px);
+  background: linear-gradient(270deg, rgba(34,193,195,0.8) 0%, rgba(30,79,85,0.9) 100%);
+  box-shadow: #2a313b;
+  text-shadow: #1c3130 1px 1px;
+  padding: 10px;
+  transition-property: background-color;
+  position: relative;
+  border-radius: 10px;
+  bottom: -110px;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
 }
 </style>

@@ -4,8 +4,8 @@
   <ul class="nav">
     <li  class="logo" >DOGALU</li>
     <li  class ="list" ><router-link to="/"><a>Home</a></router-link> </li>
-    <li  class ="list" ><router-link to="/blog"><a>Blog</a></router-link></li>
-    <li  class ="list" ><router-link to="/lesson"><a>Lessons</a></router-link></li>
+    <li v-if ="authenticated" class ="list" ><router-link to="/blog"><a>Blog</a></router-link></li>
+    <li v-if ="authenticated" class ="list" ><router-link to="/lesson"><a>Lessons</a></router-link></li>
     <li v-if ="!authenticated" class ="list" ><router-link  to="/login">login</router-link></li>
     <li v-if="authenticated" class ="list" ><router-link to="/profile"  >Profile</router-link></li>
     <li v-if="authenticated" class ="list" ><a v-if="authenticated" v-on:click="logout()">Logout</a></li>

@@ -5,8 +5,8 @@
       <activedog></activedog>
     </div>
     <div class="blog">
-      <p>Willkomen in Blogalu</p>
-      <p class="p">Hier kannst Einen <br> Blog Erstellen & die Beiträge lesen</p>
+      <p>Bock auf der Blogalu!</p>
+      <p class="p">Hier kannst du einen <br> Blog erstellen &  Beiträge lesen</p>
     </div>
     <div class = "btnbackg">
     <div class ="btn2">

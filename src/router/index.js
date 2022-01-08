@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Lessons from '@/views/Lesson'
 import { LoginCallback } from '@okta/okta-vue'
-import Profile from '@/components/Profile'
-import Login from '@/components/Login'
+import Profile from '@/views/Profile'
+import Login from '@/views/Login'
 import Home from '../views/Home.vue'
 const routes = [
   {

@@ -92,7 +92,7 @@ export default {
       .catch(error => console.log('error', error))
   },
   getLesson (lesson) {
-    if (lesson.description.length > 50) return lesson.description.substring(0, 50) + ' ...'
+    if (lesson.description.length > 50) return lesson.description.substring(0, 50)
   }
 }
 
