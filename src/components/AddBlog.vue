@@ -24,7 +24,7 @@
       </div>
       <div class="mb-3">
         <label class="form-label"><strong>Text :</strong></label>
-        <input class="form-control" id="description" v-model="description" required >
+        <textarea class="form-control" id="description" v-model="description"> </textarea>
         <div class="invalid-feedback">
           Bitte gemessene inhalt eingeben.
         </div>
@@ -107,15 +107,7 @@ export default {
 </script>
 
 <style scoped>
-.is-invalid~.invalid-feedback, .is-invalid~.invalid-tooltip, .was-validated :invalid~.invalid-feedback, .was-validated :invalid~.invalid-tooltip {
-  display: block;
-  align-content: start;
-  position: relative;
-  left: -343px;
-}
-.invalid-feedback{
-  z-index: 7;
-}
+
 .frstbtn{
   margin: 0 1rem;
   padding: 0.5rem 1.5rem;
@@ -400,9 +392,7 @@ input#title.form-control{
 }
 
 input#description.form-control{
-  min-height: calc(20.5em + 0.75rem + 2px);
   margin: 4px 0;
-  padding-left: 25px;
   font-size: 13px;
   letter-spacing: 0.15px;
   border: none;
@@ -412,6 +402,7 @@ input#description.form-control{
   transition: 0.25s ease;
   border-radius: 8px;
   box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #f9f9f9;
+  height: 400px;
 }
 label {
   color: dimgray;

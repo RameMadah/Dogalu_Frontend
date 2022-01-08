@@ -19,7 +19,7 @@
       </div>
       <div class="mb-3">
         <label class="form-label"><strong>Lektion :</strong></label>
-        <textarea class="form-control" id="description"  rows="3" v-model = "description" required ></textarea>
+        <textarea class="form-control" id="description"   v-model = "description"  ></textarea>
       </div>
       <div class="mt-5">
         <button class="btn btn-danger me-3" id="create" type="submit" @click="createBlog()">hinzufügen</button>
@@ -112,7 +112,7 @@ button:focus:not(:focus-visible) {
   transform: scale(1.05)
 }
 
-.btn-check:active+.btn-primary, .btn-check:checked+.btn-primary, .btn-primary:active, .btn-primary:active, .show>.btn-primary:dropdown-toggle {
+.btn-check:active+.btn-primary, .btn-check:checked+.btn-primary, .btn-primary:active, .btn-primary:active {
   color:#1f7976;
   background-color: whitesmoke;
   border-color: #1f7976;}
@@ -150,6 +150,7 @@ body {
   font-family: 'Abel', sans-serif;
 }
 #title {
+  width: 22%;
   text-align: center;
   margin-bottom: 3em;
   letter-spacing: 5px;
@@ -373,8 +374,7 @@ input#author.form-control{
   text-align: center;
 }
 input#title.form-control{
-  width: 200px;
-  width: 350px;
+
   height: 40px;
   margin: 4px 0;
   padding-left: 25px;
