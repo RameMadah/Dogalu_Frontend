@@ -41,20 +41,20 @@ export default {
   data () {
     return {
       title: '',
-      description: '',
-      author: ''
+      author: '',
+      description: ''
     }
   },
   methods: {
     createBlog () {
-      var myHead = new Headers()
-      myHead.append('Content-Type', 'application/json')
-
       var raw = JSON.stringify({
         title: this.title,
-        description: this.description,
-        author: this.author
+        author: this.description,
+        description: this.author
       })
+
+      var myHead = new Headers()
+      myHead.append('Content-Type', 'application/json')
 
       var requestOptions = {
         method: 'POST',
