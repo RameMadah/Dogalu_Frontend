@@ -1,6 +1,6 @@
 <template>
   <div class="avatar"><AvatarDog></AvatarDog></div>
-  <div class="level"> <p class="xp">EXP : {{checker()}}</p></div>
+  <div class="level"> <p class="xp">EXP : {{this.exp}}</p></div>
       <section>
         <div class="progress">
           <div class="progress-bar" id="prog" role="progressbar" style='' aria-valuenow="50" aria-valuemin="50" aria-valuemax="100"  aria-valuetext="50"></div>
