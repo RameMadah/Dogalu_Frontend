@@ -50,7 +50,7 @@ img{
 .pa{
   margin-right: auto;
   font-family: "Roboto", sans-serif;
-  color: #2a313b;
+  color: #404354;
   font-weight: 600;
   text-decoration-thickness: 400% ;
   position: absolute;

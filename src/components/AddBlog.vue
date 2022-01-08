@@ -154,18 +154,19 @@ export default {
   .low {
   position: absolute;
   bottom: 561px;
-  left: -53px;
+  left: 103px;
     size: 30px;
-  width: 27.5vmax;
   height: 13.5vmax;
   display: flex;
   justify-content: right;
   align-items: center;
   margin-left: 900px;
+    width: 20%;
 }
 
 .sleepy{
   position: absolute;
+  width: 20%;
 }
 body {
   background: #f0f0f3;

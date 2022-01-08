@@ -1,13 +1,15 @@
 <template>
   <div class="card">
     <div class="card-header">
-      Featured
+      Präsentiert
     </div>
     <div class="card-body">
       <h5 class="card-title">Was Ist Dogalu ?</h5>
       <p class="card-text">Plattform, auf der Sie kostenlose Lektionen
         zur Erziehung Ihres Hundes erhalten können</p>
       <a href="#" class="btn btn-primary"><router-link to="/lesson"><a>Überblick</a></router-link></a>
+      <br>
+      <br>
     </div>
   </div>
 </template>
@@ -47,5 +49,11 @@ a{
   border-color:  #1f7976;
   border-radius: 8px;
   transform: scale(1.05)
+}
+.card-body{
+  width: 50%;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
 }
 </style>
