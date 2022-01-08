@@ -1,9 +1,9 @@
 <template>
   <div class="avatar"><AvatarDog></AvatarDog></div>
-  <div class="level"> <p class="xp">EXP : {{this.exp}}</p></div>
+  <div class="level"> <p class="xp">EXP : {{checker()}}</p></div>
       <section>
         <div class="progress">
-          <div class="progress-bar" id="prog" role="progressbar" style="{{getbar() }}" aria-valuenow="50" aria-valuemin="50" aria-valuemax="100"  aria-valuetext="50"></div>
+          <div class="progress-bar" id="prog" role="progressbar" style='' aria-valuenow="50" aria-valuemin="50" aria-valuemax="100"  aria-valuetext="50"></div>
         </div>
         <div class="row row-cols-3 row-cols-md-3 g-3">
             <div class="col"  v-for= " lesson in lessons" v-bind:key= "lesson.lid" >
@@ -31,13 +31,13 @@
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Abbrechen</button>
-                        <button type="button" class="btn btn-primary" @click="getexp(lesson.punkte)" data-bs-dismiss="modal">Akzeptieren</button>
+                        <button type="button" class="btn btn-primary" @click="getexp(a)"  data-bs-dismiss="modal">Akzeptieren</button>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="card-footer">
-                  <small class="text-muted"> EP : {{lesson.punkte}} </small>
+                  <small class="text-muted"> EP :{{a = lesson.punkte }}</small>
                 </div>
               </div>
             </div>
@@ -58,12 +58,30 @@ export default {
   data () {
     return {
       lessons: [],
-      exp: 0
+      exp: 0,
+      gain: 0,
+      claim: ''
     }
   },
+  async created () {
+    this.claims = await Object.entries(await this.$auth.getUser()).map(entry => ({ claim: entry[0], value: entry[1] }))
+    this.claim = (await this.$auth.getUser())
+  },
   methods: {
+    storeexp (key) {
+      localStorage.removeItem(key)
+      localStorage.setItem(key, this.exp)
+    },
+    checker () {
+      if (localStorage.getItem(this.claim.name) === 0 || NaN) { this.exp = 0 } else { this.exp = localStorage.getItem(this.claim.name) }
+      this.exp = parseInt(this.exp)
+      return this.exp
+    },
     getexp (e) {
-      this.exp += parseInt(e)
+      const old = this.exp
+      this.exp = 0
+      this.exp = old + parseInt(e)
+      this.storeexp(this.claim.name)
       return this.exp
     },
     getbar () {
