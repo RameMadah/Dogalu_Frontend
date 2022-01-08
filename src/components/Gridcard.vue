@@ -1,5 +1,4 @@
 <template>
-  {{created}}
   <div class="avatar"><AvatarDog></AvatarDog></div>
   <div class="level"> <p class="xp">EXP : {{checker()}}</p></div>
       <section>
@@ -79,6 +78,7 @@ export default {
       return this.exp
     },
     getexp (e) {
+      this.created()
       const old = this.exp
       this.exp = 0
       this.exp = old + parseInt(e)

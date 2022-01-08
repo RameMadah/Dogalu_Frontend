@@ -156,12 +156,12 @@ export default {
   text-decoration-thickness: 900% ;
   position: absolute;
   left: 590px;
-  bottom: 480px;
+  bottom: 600px;
   font-size: 98px;
 }
   .low {
   position: absolute;
-  bottom: 411px;
+  bottom: 561px;
   left: -53px;
     size: 30px;
   width: 27.5vmax;
