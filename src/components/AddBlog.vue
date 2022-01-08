@@ -52,8 +52,8 @@ export default {
 
       var raw = JSON.stringify({
         title: this.title,
-        description: this.author,
-        author: this.description
+        description: this.description,
+        author: this.author
       })
 
       var requestOptions = {
