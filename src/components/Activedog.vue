@@ -49,6 +49,9 @@ export default {
   border-radius: 50%;
   margin-top: 4rem;
   z-index: 0;
+  right: 300px;
+  bottom: -190px;
+  left: 30px;
 }
 .ball:after {
   content: '';
@@ -60,7 +63,7 @@ export default {
   width: 100%;
   border-radius: 50%;
   box-shadow: inset 0 -8px 0 0 rgba(0, 0, 0, 0.2);
-  background: #6e64f0;
+  background: #b9463e;
   z-index: 1;
 }
 .ball:focus {
