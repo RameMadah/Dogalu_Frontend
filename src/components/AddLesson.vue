@@ -22,7 +22,7 @@
         <textarea class="form-control" id="description"   v-model = "description"  ></textarea>
       </div>
       <div class="mt-5">
-        <button class="btn btn-danger me-3" id="create" type="submit" @click="createBlog()">hinzufügen</button>
+        <button class="btn btn-danger me-3" id="create" type="submit" @click="createLesson()">hinzufügen</button>
         <button class="btn btn-danger  mmm" type="reset" @click="reset()">Reset</button>
         <div class="low">
           <sleepy-dog class ='sleepyy'></sleepy-dog>
@@ -46,7 +46,7 @@ export default {
     }
   },
   methods: {
-    createBlog () {
+    createLesson () {
       if (this.description.length < 500) { this.punkte = 5 }
       if (this.description.length > 500) { this.punkte = 10 }
       if (this.description.length > 1000) { this.punkte = 15 }

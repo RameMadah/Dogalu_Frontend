@@ -10,7 +10,10 @@
       <div class="container overflow-hidden"  v-for= " blog in blogs" v-bind:key= "blog.id" >
         <div class="row gy-5">
           <div class="col-lg-12">
-            <div class="p-3 border bg-light"><p class="tex"> {{ blog.description }}</p></div>
+            <p class="aut"> {{ blog.author }}</p>
+            <div class="p-3 border bg-light">
+              <p class="tit"> {{ blog.title }}</p>
+              <p class="tex"> {{ blog.description }}</p></div>
           </div>
         </div>
         <br>
@@ -48,6 +51,17 @@ export default {
 </script>
 
 <style scoped>
+.tit{
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+.aut{
+  text-align: left;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .frstbtn{
   margin: 0 1rem;
   padding: 0.5rem 1.5rem;

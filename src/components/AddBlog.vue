@@ -1,39 +1,31 @@
 <template>
-  <button class="btn frstbtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Blog</button>
+  <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    Blog hinzufügen</button>
 
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
       <h5 id="offcanvasRightLabel"><p class="bolgtitle">Blogalu ..</p></h5>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <form class="offcanvas-body needs-validation" novalidate >
-
-      <div class="mb-3" >
+    <form class="offcanvas-body">
+      <div class="mb-3">
         <label for="title" class="form-label"><strong>Titel :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></label>
-        <input type="text" class="form-control" id="title"  placeholder=" "  v-model ="title" required>
-        <div class="invalid-feedback">
-          Bitte den Posttitel eingeben.
-        </div>
+        <input type="text" class="form-control" id="title"  v-model ="this.title" >
       </div>
       <div class="mb-3">
-        <label for="author" class="form-label"><strong>Author :&nbsp;&nbsp;</strong></label>
-        <input type="text" class="form-control" id="author" placeholder=" " v-model ="author" required>
-        <div class="invalid-feedback">
-          Bitte der Authorname eingeben.
-        </div>
+        <label for="title" class="form-label"><strong>author :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></label>
+        <input type="text" class="form-control" id="author" v-model ="this.author" >  <br>
       </div>
       <div class="mb-3">
         <label class="form-label"><strong>Text :</strong></label>
-        <textarea class="form-control" id="description" v-model="description"> </textarea>
-        <div class="invalid-feedback">
-          Bitte gemessene inhalt eingeben.
-        </div>
+        <textarea class="form-control" id="description"   v-model = "this.description"  ></textarea>
       </div>
       <div class="mt-5">
-        <button class="btn btn-primary me-3" type="submit" @click="createBlog()">hinzufügen</button>
+        <button class="btn btn-danger me-3" id="create" type="submit" @click="createBlog()">hinzufügen</button>
         <button class="btn btn-danger  mmm" type="reset" @click="reset()">Reset</button>
         <div class="low">
-        <sleepy-dog class ='sleepy'></sleepy-dog>
+          <sleepy-dog class ='sleepyy'></sleepy-dog>
         </div>
       </div>
     </form>
@@ -55,52 +47,30 @@ export default {
   },
   methods: {
     createBlog () {
-      const valid = this.validate()
-      if (valid) {
-        var myHeaders = new Headers()
-        myHeaders.append('Content-Type', 'application/json')
+      var myHead = new Headers()
+      myHead.append('Content-Type', 'application/json')
 
-        var raw = JSON.stringify({
-          title: this.title,
-          author: this.author,
-          description: this.description
-        })
+      var raw = JSON.stringify({
+        title: this.title,
+        author: this.author,
+        description: this.description
+      })
 
-        var requestOptions = {
-          method: 'POST',
-          headers: myHeaders,
-          body: raw,
-          redirect: 'follow'
-        }
-        const base = process.env.VUE_APP_BACKEND_BASE_URL + '/api/v1/blogs'
-
-        fetch(base, requestOptions)
-          .catch(error => console.log('error', error))
+      var requestOptions = {
+        method: 'POST',
+        headers: myHead,
+        body: raw,
+        redirect: 'follow'
       }
+      const base = process.env.VUE_APP_BACKEND_BASE_URL + '/api/v1/blogs'
+
+      fetch(base, requestOptions)
+        .catch(error => console.log('error', error))
     },
     reset () {
       this.title = ''
       this.author = ''
       this.description = ''
-    },
-    validate () {
-      var valid = true
-      var forms = document.querySelectorAll('.needs-validation')
-
-      // Loop over them and prevent submission
-      Array.prototype.slice.call(forms)
-        .forEach(function (form) {
-          form.addEventListener('submit', function (event) {
-            if (!form.checkValidity()) {
-              valid = false
-              event.preventDefault()
-              event.stopPropagation()
-            }
-
-            form.classList.add('was-validated')
-          }, false)
-        })
-      return valid
     }
   }
 }
@@ -108,23 +78,26 @@ export default {
 
 <style scoped>
 
-.frstbtn{
-  margin: 0 1rem;
-  padding: 0.5rem 1.5rem;
-  font-family: "Roboto", sans-serif;
-  cursor: pointer;
-  transition: color 0.2s ease-out, transform 0.2s ease-out;
-  color: dimgray;
-  transition-duration: 0.4s;
-  background-color: white ;
-  border: 0px solid #1f7976;
-  border-radius: 10px;
-  box-shadow: 9px 9px 16px #2c3e50, -9px -9px 16px #1f7976;
+.btn-check:focus+.btn-primary, .btn-primary:focus, .btn-primary:focus {
+  color: black;
+  background-color: whitesmoke!important;
+  border-color: whitesmoke;
+  box-shadow: 0px 10px 10px rgb(0 0 0 / 7%);
 }
-.btn:hover {
-  border-color: #1f7976;
+.btn-check:active+.btn-primary, .btn-check:checked+.btn-primary, .btn-primary.active, .btn-primary:active, .show>.btn-primary.dropdown-toggle {
+  color: black;
+  background-color: whitesmoke!important;
+  border-color: whitesmoke;
+  box-shadow: 0px 10px 10px rgb(0 0 0 / 7%);
 }
-.frstbtn:hover{
+button:focus:not(:focus-visible) {
+  color: black;
+  background-color: whitesmoke!important;
+  border-color: whitesmoke;
+  box-shadow: 0px 10px 10px rgb(0 0 0 / 7%);
+}
+
+.btn-primary:hover{
   color: black;
   background-color: white;
   box-shadow: 9px 9px 16px #2c3e50, -9px -9px 16px #1f7976;
@@ -133,13 +106,11 @@ export default {
   border-radius: 8px;
   transform: scale(1.05)
 }
-.btn-primary:hover{
-  background-color: white;
-  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
-  transition-duration: 0.4s;
-  border-color: rgba(255, 255, 255, 0.5);
-  border-radius: 8px;
-}
+
+.btn-check:active+.btn-primary, .btn-check:checked+.btn-primary, .btn-primary:active, .btn-primary:active {
+  color:#1f7976;
+  background-color: whitesmoke;
+  border-color: #1f7976;}
 
 .bolgtitle{
   color: dimgray;
@@ -151,21 +122,22 @@ export default {
   bottom: 600px;
   font-size: 98px;
 }
-  .low {
+.low {
   position: absolute;
   bottom: 561px;
   left: 103px;
-    size: 30px;
+  size: 30px;
   height: 13.5vmax;
   display: flex;
   justify-content: right;
   align-items: center;
   margin-left: 900px;
-    width: 20%;
-    z-index: 10;
+  width: 20%;
+  z-index: 10;
 }
 
-.sleepy{
+.sleepyy{
+
 }
 body {
   background: #f0f0f3;
@@ -174,6 +146,7 @@ body {
   font-family: 'Abel', sans-serif;
 }
 #title {
+  width: 22%;
   text-align: center;
   margin-bottom: 3em;
   letter-spacing: 5px;
@@ -277,13 +250,20 @@ body {
   box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
 }
 
-.btn-check:active+.btn-primary:focus, .btn-check:checked+.btn-primary:focus, .btn-primary.active:focus, .btn-primary:active:focus, .show>.btn-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.25rem rgb(163 177 198 / 50%);
+.me-3:hover{
+  color: black;
 }
+
+/*.btn-check:active+.btn-primary:focus, .btn-check:checked+.btn-primary:focus, .btn-primary.active:focus, .btn-primary:active:focus, .show>.btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem rgb(163 177 198 / 50%);
+}*/
 
 .mmm{
   background-color: #e0e5ec;
   box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
+}
+.mmm:hover{
+  color: black;
 }
 
 .btn-primary {
@@ -294,10 +274,10 @@ body {
   transition: color 0.2s ease-out, transform 0.2s ease-out;
   color: dimgray;
   transition-duration: 0.4s;
-  background-color: white;
+  background-color: white ;
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 10px;
-  box-shadow: 4px 4px 6px 0 rgb(0 0 0 / 10%), -4px -4px 6px white;
+  box-shadow: 9px 9px 16px #2c3e50, -9px -9px 16px #1f7976;
 }
 .btn-check:active+.btn-danger:focus, .btn-check:checked+.btn-danger:focus, .btn-danger.active:focus, .btn-danger:active:focus, .show>.btn-danger.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.25rem rgb(163 177 198 / 50%);
@@ -357,8 +337,7 @@ textarea.form-control {
   box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #f9f9f9;
 }
 
-input#author.form-control{
-  width: 200px;
+fieldset{
   width: 350px;
   height: 40px;
   margin: 4px 0;
@@ -374,9 +353,8 @@ input#author.form-control{
   box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #f9f9f9;
   text-align: center;
 }
-input#title.form-control{
+input#author.form-control{
   width: 200px;
-  width: 350px;
   height: 40px;
   margin: 4px 0;
   padding-left: 25px;
@@ -389,10 +367,13 @@ input#title.form-control{
   transition: 0.25s ease;
   border-radius: 8px;
   box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #f9f9f9;
+  text-align: center;
 }
+input#title.form-control{
 
-input#description.form-control{
+  height: 40px;
   margin: 4px 0;
+  padding-left: 25px;
   font-size: 13px;
   letter-spacing: 0.15px;
   border: none;
@@ -402,7 +383,6 @@ input#description.form-control{
   transition: 0.25s ease;
   border-radius: 8px;
   box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #f9f9f9;
-  height: 400px;
 }
 label {
   color: dimgray;
