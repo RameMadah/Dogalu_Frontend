@@ -1,4 +1,5 @@
 <template>
+  {{created}}
   <div class="avatar"><AvatarDog></AvatarDog></div>
   <div class="level"> <p class="xp">EXP : {{checker()}}</p></div>
       <section>
@@ -63,14 +64,14 @@ export default {
       claim: ''
     }
   },
-  async created () {
-    this.claims = await Object.entries(await this.$auth.getUser()).map(entry => ({ claim: entry[0], value: entry[1] }))
-    this.claim = (await this.$auth.getUser())
-  },
   methods: {
     storeexp (key) {
       localStorage.removeItem(key)
       localStorage.setItem(key, this.exp)
+    },
+    async created () {
+      this.claims = await Object.entries(await this.$auth.getUser()).map(entry => ({ claim: entry[0], value: entry[1] }))
+      this.claim = (await this.$auth.getUser())
     },
     checker () {
       if (localStorage.getItem(this.claim.name) === 0 || NaN) { this.exp = 0 } else { this.exp = localStorage.getItem(this.claim.name) }
